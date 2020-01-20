@@ -1,35 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
 
-<head>
-    <title>Alfa &mdash; Administra tu GIMNASIO.</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+include 'inc/templates/header.php';
 
-
-    <link href="https://fonts.googleapis.com/css?family=Muli:300,400,700,900" rel="stylesheet">
-    <link rel="stylesheet" href="fonts/icomoon/style.css">
-
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/jquery-ui.css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
-
-    <link rel="stylesheet" href="css/jquery.fancybox.min.css">
-
-    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
-
-    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
-
-    <link rel="stylesheet" href="css/aos.css">
-    <link href="css/jquery.mb.YTPlayer.min.css" media="all" rel="stylesheet" type="text/css">
-
-    <link rel="stylesheet" href="css/style.css">
-
-
-
-</head>
+?>
 
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
 
@@ -45,30 +18,15 @@
         </div>
 
 
-        <header class="site-navbar py-4 js-sticky-header site-navbar-target" role="banner">
+        <!-- Barra de navegacion -->
+        <?php 
+        
+        include 'inc/templates/barra-navegacion.php';
 
-            <div class="container-fluid">
-                <div class="d-flex align-items-center">
-                    <div class="site-logo"><a href="index.html">ALFA<span>.</span> </a></div>
-                    <div class="ml-auto">
-                        <nav class="site-navigation position-relative text-right" role="navigation">
-                            <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
-                                <li><a href="#home-section" class="nav-link">Inicio</a></li>
-                                <li><a href="#classes-section" class="nav-link">Clases</a></li>
-                                <li><a href="#schedule-section" class="nav-link">Schedule</a></li>
-                                <li><a href="#trainer-section" class="nav-link">Trainer</a></li>
-                                <li><a href="#services-section" class="nav-link">Services</a></li>
-                                <li><a href="#contact-section" class="nav-link">Contact</a></li>
-                            </ul>
-                        </nav>
-                        <a href="#" class="d-inline-block d-lg-none site-menu-toggle js-menu-toggle float-right"><span class="icon-menu h3"></span></a>
-                    </div>
-                </div>
-            </div>
-        </header>
+        ?>
 
 
-        <a id="bgndVideo" class="player" data-property="{videoURL:'https://www.youtube.com/watch?v=3P6bEAlW-Vw',showYTLogo:false, showAnnotations: false, showControls: false, cc_load_policy: false, containment:'#home-section',autoPlay:true, mute:true, startAt:255, stopAt:271, opacity:1}">
+        <a id="bgndVideo" class="player" data-property="{videoURL:'https://www.youtube.com/watch?v=J_Wq847w1CU',showYTLogo:false, showAnnotations: false, showControls: false, cc_load_policy: false, containment:'#home-section',autoPlay:true, mute:true, startAt:1, stopAt:120, opacity:1}">
         </a>
 
 
@@ -135,8 +93,8 @@
                         <div class="ftco-feature-1">
                             <span class="icon flaticon-vegetables"></span>
                             <div class="ftco-feature-1-text">
-                                <h2>Alimentación</h2>
-                                <p>Tambien puedes mandar por correo, algunos tips a tus clientes, sobre alimentacion y ejercicios, para que tengas un maximo control de su entrenamiento.</p>
+                                <h2>Promociones</h2>
+                                <p>En caso de que tienes clientes VIP o con algunas promociones, el sistema aplicara los cambios necesarios a cada cliente, para un mejor control.</p>
                             </div>
                         </div>
                     </div>
@@ -155,8 +113,8 @@
                         <div class="ftco-feature-1">
                             <span class="icon flaticon-stationary-bike"></span>
                             <div class="ftco-feature-1-text">
-                                <h2>Recusandae nisi</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia, minima quod optio recusandae nisi.</p>
+                                <h2>Ventas</h2>
+                                <p>Una parte muy importante en tu gimnasio, es la venta de todo tipo de productos, por eso, tu mismo puedes agregar los productos que tu quieras.</p>
                             </div>
                         </div>
                     </div>
@@ -172,7 +130,7 @@
                 <div class="row align-items-center justify-content-center text-center">
                     <div class="col-md-7">
                         <h2 class="">Facil de usar</h2>
-                        <p class="lead mx-auto desc mb-5">Sin instalaciones y configuración. Solo registrate y empieza a usar ALFA al instante.</p>
+                        <p class="lead mx-auto desc mb-5">Sin instalaciones ni descargas. Solo registrate y empieza a usar ALFA al instante.</p>
                     </div>
                 </div>
             </div>
@@ -1349,6 +1307,7 @@
             </div>
         </div>
 
+
         <div class="site-section" id="services-section">
             <div class="container">
                 <div class="row justify-content-center text-center mb-5" data-aos="fade-up">
@@ -1423,87 +1382,32 @@
             </div>
         </div>
 
-        <div class="site-section bg-light contact-wrap" id="contact-section">
-            <div class="container">
-
-                <div class="row justify-content-center text-center mb-5">
-                    <div class="col-md-8  section-heading">
-                        <span class="subheading">Get In Touch</span>
-                        <h2 class="heading mb-3">Contact Us</h2>
-                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="row justify-content-center">
-                    <div class="col-md-7">
-                        <form method="post" data-aos="fade">
-                            <div class="form-group row">
-                                <div class="col-md-6 mb-3 mb-lg-0">
-                                    <input type="text" class="form-control" placeholder="First name">
-                                </div>
-                                <div class="col-md-6">
-                                    <input type="text" class="form-control" placeholder="Last name">
-                                </div>
-                            </div>
-
-                            <div class="form-group row">
-                                <div class="col-md-12">
-                                    <input type="text" class="form-control" placeholder="Subject">
-                                </div>
-                            </div>
-
-                            <div class="form-group row">
-                                <div class="col-md-12">
-                                    <input type="email" class="form-control" placeholder="Email">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-md-12">
-                                    <textarea class="form-control" id="" cols="30" rows="10" placeholder="Write your message here."></textarea>
-                                </div>
-                            </div>
-
-                            <div class="form-group row">
-                                <div class="col-md-6">
-
-                                    <input type="submit" class="btn btn-primary py-3 px-5 btn-block" value="Send Message">
-                                </div>
-                            </div>
-
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
         <footer class="footer-section bg-dark">
             <div class="container">
                 <div class="row">
                     <div class="col-md-4">
-                        <h3 class="text-white">About Workout</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam facere optio eligendi.</p>
+                        <h3 class="text-white">Acerca de ALFA</h3>
+                        <p>ALFA es un gestor de gimnasio para un mejor control y manejo de los clientes.</p>
                     </div>
 
                     <div class="col-md-3 ml-auto">
                         <h3 class="text-white">Links</h3>
                         <ul class="list-unstyled footer-links">
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">Classes</a></li>
+                            <li><a href="#">Inicio</a></li>
+                            <li><a href="#">Clases</a></li>
                             <li><a href="#">Schedule</a></li>
                             <li><a href="#">Trainer</a></li>
                         </ul>
                     </div>
 
                     <div class="col-md-4">
-                        <h3 class="text-white">Subscribe</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus, odio beatae accusantium.
+                        <h3 class="text-white">Subscribete</h3>
+                        <p>Actualizaciones, mejoras, noticias y mas. Solo ingresa tu email para ser el primero en enterarte.
                         </p>
                         <form action="#">
                             <div class="d-flex mb-5">
                                 <input type="text" class="form-control rounded-0" placeholder="Email">
-                                <input type="submit" class="btn btn-primary rounded-0" value="Subscribe">
+                                <input type="submit" class="btn btn-primary rounded-0" value="Subscribete">
                             </div>
                         </form>
                     </div>
@@ -1514,14 +1418,12 @@
                     <div class="col-md-12">
                         <div class=" pt-5">
                             <p>
-                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                                 Copyright &copy;
                                 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
                                 <script>
                                     document.write(new Date().getFullYear());
-                                </script> All rights reserved | This template is made with
-                                <i class="icon-heart text-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                </script> All rights reserved | Todo nuestro trabajo esta hecho con
+                                <i class="icon-heart text-danger" aria-hidden="true"></i>
                             </p>
                         </div>
                     </div>
@@ -1535,24 +1437,13 @@
     </div>
     <!-- .site-wrap -->
 
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/jquery-migrate-3.0.1.min.js"></script>
-    <script src="js/jquery-ui.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/jquery.stellar.min.js"></script>
-    <script src="js/jquery.countdown.min.js"></script>
-    <script src="js/bootstrap-datepicker.min.js"></script>
-    <script src="js/jquery.easing.1.3.js"></script>
-    <script src="js/aos.js"></script>
-    <script src="js/jquery.fancybox.min.js"></script>
-    <script src="js/jquery.sticky.js"></script>
-    <script src="js/jquery.mb.YTPlayer.min.js"></script>
 
+    <?php
+    
+    include 'inc/templates/footer.php';
 
+    ?>
 
-
-    <script src="js/main.js"></script>
+    
 
 </body>
