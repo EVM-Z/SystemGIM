@@ -10,7 +10,7 @@
                         <li><a href="#schedule-section" class="nav-link">Schedule</a></li>
                         <li><a href="#trainer-section" class="nav-link">Trainer</a></li>
                         <li><a href="#services-section" class="nav-link">Services</a></li>
-                        <li><a href="#" class="nav-link">Login</a></li>
+                        <li><a href="login.php" class="nav-link">Login</a></li>
                     </ul>
                 </nav>
                 <a href="#" class="d-inline-block d-lg-none site-menu-toggle js-menu-toggle float-right"><span class="icon-menu h3"></span></a>

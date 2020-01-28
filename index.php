@@ -1,7 +1,5 @@
 <?php
-
 include 'inc/templates/header.php';
-
 ?>
 
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
@@ -20,9 +18,7 @@ include 'inc/templates/header.php';
 
         <!-- Barra de navegacion -->
         <?php 
-        
         include 'inc/templates/barra-navegacion.php';
-
         ?>
 
 
@@ -37,7 +33,7 @@ include 'inc/templates/header.php';
                         <h1 class="mb-3">Administra tu GIMNASIO</h1>
                         <p class="lead mx-auto desc mb-5">Un sistema completo de control para tu gimnasio, con todo lo que tu necesitas, completamente en la Web y desde cualquier dispositivo a cualquier hora.</p>
                         <p class="text-center">
-                            <a href="#contact-section" class="btn btn-outline-white py-3 px-5">Registrate</a>
+                            <a href="registro.php" class="btn btn-outline-white py-3 px-5">Registrate</a>
                         </p>
                     </div>
                 </div>
@@ -51,7 +47,7 @@ include 'inc/templates/header.php';
                     <div class="col-md-8 section-heading">
                         <span class="subheading">Algo nuevo y diferente</span>
                         <h2 class="heading mb-3">¿Que puedes hacer con ALFA?</h2>
-                        <p>Con ALFA, podras tener un control de usuarios mas eficiente, tambien podras llevar un seguimiento de los usuarios, eliminar, agregar y actualizar los datos, sea donde sea. Tambien podras enviar promociones por correo, tener de
+                        <p>Con ALFA, podras tener un control de usuarios mas eficiente, tambien podras llevar un seguimiento de cada persona, acerca de sus tiempos, pagos, promociones, sea donde sea. Tambien podras enviar promociones por correo, tener de
                             cerca a tus clientes mas fieles y graficos para una mejor visualizacion de la información.</p>
                     </div>
                 </div>
@@ -1312,9 +1308,9 @@ include 'inc/templates/header.php';
             <div class="container">
                 <div class="row justify-content-center text-center mb-5" data-aos="fade-up">
                     <div class="col-md-8  section-heading">
-                        <span class="subheading">Fitness Services</span>
-                        <h2 class="heading mb-3">Services</h2>
-                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.
+                        <span class="subheading">Escoge el que mas quieras</span>
+                        <h2 class="heading mb-3">Paquetes</h2>
+                        <p>Escoge el plan de quieras, y cancelalo cuando quieras. En caso de mas detalles, llama a soporte tecnico.
                         </p>
                     </div>
                 </div>
@@ -1324,8 +1320,12 @@ include 'inc/templates/header.php';
                         <div class="ftco-feature-1">
                             <span class="icon flaticon-fit"></span>
                             <div class="ftco-feature-1-text">
-                                <h2>Be Fit</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur tempora delectus aut, mollitia. Veritatis!</p>
+                                <h2>Gratuito</h2>
+                                <ol>
+                                    <li>Coffee</li>
+                                    <li>Tea</li>
+                                    <li>Milk</li>
+                                </ol>
                             </div>
                         </div>
                     </div>
@@ -1333,8 +1333,8 @@ include 'inc/templates/header.php';
                         <div class="ftco-feature-1">
                             <span class="icon flaticon-gym-1"></span>
                             <div class="ftco-feature-1-text">
-                                <h2>Join Club</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae tenetur numquam sunt sequi similique.</p>
+                                <h2>Emprendedor</h2>
+                                <p>En este paquete, se paga para un numero mayor de clientes, seccion de tienda, mas clientes, resultados mensuales.</p>
                             </div>
                         </div>
                     </div>
@@ -1342,8 +1342,8 @@ include 'inc/templates/header.php';
                         <div class="ftco-feature-1">
                             <span class="icon flaticon-gym"></span>
                             <div class="ftco-feature-1-text">
-                                <h2>Gym Fitness</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam fuga, blanditiis. Possimus, error, deserunt.</p>
+                                <h2>Titan</h2>
+                                <p>Esta seccion, es mas premium, lo mejor de lo mejor.</p>
                             </div>
                         </div>
                     </div>
@@ -1352,7 +1352,7 @@ include 'inc/templates/header.php';
                         <div class="ftco-feature-1">
                             <span class="icon flaticon-vegetables"></span>
                             <div class="ftco-feature-1-text">
-                                <h2>Eat Vegie</h2>
+                                <h2>Union con seccion 1</h2>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores ullam tempore aliquam dolores quos.</p>
                             </div>
                         </div>
@@ -1362,7 +1362,7 @@ include 'inc/templates/header.php';
                         <div class="ftco-feature-1">
                             <span class="icon flaticon-fruit-juice"></span>
                             <div class="ftco-feature-1-text">
-                                <h2>Fruit Juices</h2>
+                                <h2>Union con seccion 2</h2>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic aut libero, doloribus. Magni, nihil.</p>
                             </div>
                         </div>
@@ -1372,7 +1372,7 @@ include 'inc/templates/header.php';
                         <div class="ftco-feature-1">
                             <span class="icon flaticon-stationary-bike"></span>
                             <div class="ftco-feature-1-text">
-                                <h2>Body Warmup</h2>
+                                <h2>Union con seccion 3</h2>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat dolorem debitis assumenda beatae quis.</p>
                             </div>
                         </div>
@@ -1387,11 +1387,8 @@ include 'inc/templates/header.php';
 
 
     <?php
-    
     include 'inc/templates/footer.php';
-
     ?>
 
-    
 
 </body>
