@@ -21,10 +21,19 @@ include 'inc/templates/header.php';
                 <form method="post" data-aos="fade">
                     <div class="form-group row">
                         <div class="col-md-6 mb-3 mb-lg-0">
-                            <input type="text" class="form-control" placeholder="Nombre">
+                            <input type="text" class="form-control" placeholder="Nombre(s)">
                         </div>
                         <div class="col-md-6">
-                            <input type="text" class="form-control" placeholder="Apellido">
+                            <input type="text" class="form-control" placeholder="Apellidos">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-md-6 mb-3 mb-lg-0">
+                            <input type="text" class="form-control" placeholder="Sexo">
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" placeholder="Fecha de Nacimiento">
                         </div>
                     </div>
 
@@ -43,6 +52,12 @@ include 'inc/templates/header.php';
                     <div class="form-group row">
                         <div class="col-md-12">
                             <input type="password" class="form-control" placeholder="Contraseña">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-md-12">
+                            <input type="text" class="form-control" placeholder="Telefono">
                         </div>
                     </div>
                     
