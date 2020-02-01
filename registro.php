@@ -30,17 +30,6 @@ include 'inc/templates/header.php';
 
                     <div class="form-group row">
                         <div class="col-md-12">
-                            <select type="texto" class="form-control" placeholder="Sexo">
-                            <option>Hombre</option>
-                                <option>Mujer</option>
-                                <option>Otro</option>
-                            </select>
-                        </div>
-                    </div>
-
-
-                    <div class="form-group row">
-                        <div class="col-md-12">
                             <input type="email" class="form-control" placeholder="Email">
                         </div>
                     </div>
