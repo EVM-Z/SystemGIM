@@ -30,18 +30,17 @@ include 'inc/templates/header.php';
 
                     <div class="form-group row">
                         <div class="col-md-6 mb-3 mb-lg-0">
-                            <input type="text" class="form-control" placeholder="Sexo">
+                            <select type="text" class="form-control" placeholder="Sexo">
+                                <option>Hombre</option>
+                                <option>Mujer</option>
+                                <option>Otro</option>
+                            </select>
                         </div>
                         <div class="col-md-6">
-                            <input type="text" class="form-control" placeholder="Fecha de Nacimiento">
-                        </div>
-                    </div>
-
-                    <div class="form-group row">
-                        <div class="col-md-12">
                             <input type="text" class="form-control" placeholder="Gimnasio">
                         </div>
                     </div>
+
 
                     <div class="form-group row">
                         <div class="col-md-12">
@@ -54,13 +53,6 @@ include 'inc/templates/header.php';
                             <input type="password" class="form-control" placeholder="Contraseña">
                         </div>
                     </div>
-
-                    <div class="form-group row">
-                        <div class="col-md-12">
-                            <input type="text" class="form-control" placeholder="Telefono">
-                        </div>
-                    </div>
-                    
 
                     <div class="form-group row">
                         <div class="col-md-12">
