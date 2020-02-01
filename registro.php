@@ -29,15 +29,12 @@ include 'inc/templates/header.php';
                     </div>
 
                     <div class="form-group row">
-                        <div class="col-md-6 mb-3 mb-lg-0">
-                            <select type="text" class="form-control" placeholder="Sexo">
-                                <option>Hombre</option>
+                        <div class="col-md-12">
+                            <select type="texto" class="form-control" placeholder="Sexo">
+                            <option>Hombre</option>
                                 <option>Mujer</option>
                                 <option>Otro</option>
                             </select>
-                        </div>
-                        <div class="col-md-6">
-                            <input type="text" class="form-control" placeholder="Gimnasio">
                         </div>
                     </div>
 
