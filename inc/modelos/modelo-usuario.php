@@ -3,12 +3,8 @@ $accion=$_POST['accion'];
 // Valores que se mandan en la tabla
 $nombre=$_POST['nombre'];
 $apellido=$_POST['apellido'];
-$sexo=$_POST['sexo'];
-$f_nacimiento=$_POST['f_nacimiento'];
-$gimnasio=$_POST['gimnasio'];
 $email=$_POST['email'];
 $password=$_POST['password'];
-$telefono=$_POST['telefono'];
 
 if($accion==='crear'){
     // Codigo para crear los administradores
@@ -24,9 +20,8 @@ if($accion==='crear'){
 
     try{
         // Realizar la consulta a la base de datos
-        $stmt=$conn->prepare("INSERT INTO usuarios (nombre, apellido, sexo, f_nacimiento, gimnasio, email, password, telefono) VALUES (?, ?, ?, ?, ?, ?, ?, ?) ");
-        // Vamos a ingresar dos strign
-        $stmt->bind_param('ssssssss', $nombre, $apellido, $sexo, $f_nacimiento, $gimnasio, $email, $hash_password, $telefono);
+        $stmt=$conn->prepare("INSERT INTO usuarios (nombre, apellido, email, password) VALUES (?, ?, ?, ?) ");
+        $stmt->bind_param('ssss', $nombre, $apellido, $email, $hash_password);
         $stmt->execute();
         if($stmt->affected_rows > 0){
             $respuesta=array(

@@ -21,28 +21,28 @@ include 'inc/templates/header.php';
                 <form method="post" data-aos="fade">
                     <div class="form-group row">
                         <div class="col-md-6 mb-3 mb-lg-0">
-                            <input type="text" class="form-control" placeholder="Nombre(s)">
+                            <input type="text" name="nombre" id="nombre" class="form-control" placeholder="Nombre(s)">
                         </div>
                         <div class="col-md-6">
-                            <input type="text" class="form-control" placeholder="Apellidos">
+                            <input type="text" name="apellido" id="apellido" class="form-control" placeholder="Apellidos">
                         </div>
                     </div>
 
                     <div class="form-group row">
                         <div class="col-md-12">
-                            <input type="email" class="form-control" placeholder="Email">
+                            <input type="email" name="email" id="email" class="form-control" placeholder="Email">
                         </div>
                     </div>
 
                     <div class="form-group row">
                         <div class="col-md-12">
-                            <input type="password" class="form-control" placeholder="Contraseña">
+                            <input type="password" name="password" id="password" class="form-control" placeholder="Contraseña">
                         </div>
                     </div>
 
                     <div class="form-group row">
                         <div class="col-md-12">
-                            <input type="submit" class="btn btn-primary py-3 px-5 btn-block" value="Enviar">
+                            <input type="submit" class="btn btn-primary py-3 px-5 btn-block" value="Crear cuenta">
                         </div>
                     </div>
 
