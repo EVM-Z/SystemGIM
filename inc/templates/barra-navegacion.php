@@ -1,7 +1,7 @@
 <header class="site-navbar py-4 js-sticky-header site-navbar-target" role="banner">
     <div class="container-fluid">
         <div class="d-flex align-items-center">
-            <div class="site-logo"><a href="index.html">ALFA<span>.</span> </a></div>
+            <div class="site-logo"><a href="index.php">ALFA<span>.</span> </a></div>
             <div class="ml-auto">
                 <nav class="site-navigation position-relative text-right" role="navigation">
                     <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">

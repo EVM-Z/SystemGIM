@@ -22,7 +22,7 @@ include 'inc/templates/header.php';
         ?>
 
 
-        <a id="bgndVideo" class="player" data-property="{videoURL:'https://www.youtube.com/watch?v=J_Wq847w1CU',showYTLogo:false, showAnnotations: false, showControls: false, cc_load_policy: false, containment:'#home-section',autoPlay:true, mute:true, startAt:1, stopAt:120, opacity:1}">
+        <a id="bgndVideo" class="player" data-property="{videoURL:'https://www.youtube.com/watch?v=LdgJNtl5fZA',showYTLogo:false, showAnnotations: false, showControls: false, cc_load_policy: false, containment:'#home-section',autoPlay:true, mute:true, startAt:48, stopAt:59, opacity:1}">
         </a>
 
 
@@ -45,10 +45,9 @@ include 'inc/templates/header.php';
             <div class="container">
                 <div class="row justify-content-center text-center mb-5">
                     <div class="col-md-8 section-heading">
-                        <span class="subheading">Algo nuevo y diferente</span>
-                        <h2 class="heading mb-3">¿Que puedes hacer con ALFA?</h2>
-                        <p>Con ALFA, podras tener un control de usuarios mas eficiente, tambien podras llevar un seguimiento de cada persona, acerca de sus tiempos, pagos, promociones, sea donde sea. Tambien podras enviar promociones por correo, tener de
-                            cerca a tus clientes mas fieles y graficos para una mejor visualizacion de la información.</p>
+                        
+                        <h2 class="heading mb-3">¿Que es ALFA?</h2>
+                        <p>Un sistema completo en el cual, podras administrar tu gimnasio, en cualquier momento y a cualquier hora.</p>
                     </div>
                 </div>
 
@@ -145,60 +144,60 @@ include 'inc/templates/header.php';
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="class-item d-flex align-items-center">
-                            <a href="single.html" class="class-item-thumbnail">
+                            <a href="single.php" class="class-item-thumbnail">
                                 <img src="images/img_1.jpg" alt="Image">
                             </a>
                             <div class="class-item-text">
 
-                                <h2><a href="single.html">Fitness Class Name #1</a></h2>
+                                <h2><a href="single.php">Fitness Class Name #1</a></h2>
                                 <span>By Justin Daniel</span>,
                                 <span>30 minutes</span>
                             </div>
                         </div>
 
                         <div class="class-item d-flex align-items-center">
-                            <a href="single.html" class="class-item-thumbnail">
+                            <a href="single.php" class="class-item-thumbnail">
                                 <img src="images/img_2.jpg" alt="Image">
                             </a>
                             <div class="class-item-text">
 
-                                <h2><a href="single.html">Fitness Class Name #2</a></h2>
+                                <h2><a href="single.php">Fitness Class Name #2</a></h2>
                                 <span>By Justin Daniel</span>,
                                 <span>30 minutes</span>
                             </div>
                         </div>
 
                         <div class="class-item d-flex align-items-center">
-                            <a href="single.html" class="class-item-thumbnail">
+                            <a href="single.php" class="class-item-thumbnail">
                                 <img src="images/img_3.jpg" alt="Image">
                             </a>
                             <div class="class-item-text">
 
-                                <h2><a href="single.html">Fitness Class Name #3</a></h2>
+                                <h2><a href="single.php">Fitness Class Name #3</a></h2>
                                 <span>By Justin Daniel</span>,
                                 <span>30 minutes</span>
                             </div>
                         </div>
 
                         <div class="class-item d-flex align-items-center">
-                            <a href="single.html" class="class-item-thumbnail">
+                            <a href="single.php" class="class-item-thumbnail">
                                 <img src="images/img_4.jpg" alt="Image">
                             </a>
                             <div class="class-item-text">
 
-                                <h2><a href="single.html">Fitness Class Name #4</a></h2>
+                                <h2><a href="single.php">Fitness Class Name #4</a></h2>
                                 <span>By Justin Daniel</span>,
                                 <span>30 minutes</span>
                             </div>
                         </div>
 
                         <div class="class-item d-flex align-items-center">
-                            <a href="single.html" class="class-item-thumbnail">
+                            <a href="single.php" class="class-item-thumbnail">
                                 <img src="images/img_1.jpg" alt="Image">
                             </a>
                             <div class="class-item-text">
 
-                                <h2><a href="single.html">Fitness Class Name #5</a></h2>
+                                <h2><a href="single.php">Fitness Class Name #5</a></h2>
                                 <span>By Justin Daniel</span>,
                                 <span>30 minutes</span>
                             </div>
@@ -208,60 +207,60 @@ include 'inc/templates/header.php';
                     </div>
                     <div class="col-lg-6">
                         <div class="class-item d-flex align-items-center">
-                            <a href="single.html" class="class-item-thumbnail">
+                            <a href="single.php" class="class-item-thumbnail">
                                 <img src="images/img_1.jpg" alt="Image">
                             </a>
                             <div class="class-item-text">
 
-                                <h2><a href="single.html">Fitness Class Name #1</a></h2>
+                                <h2><a href="single.php">Fitness Class Name #1</a></h2>
                                 <span>By Justin Daniel</span>,
                                 <span>30 minutes</span>
                             </div>
                         </div>
 
                         <div class="class-item d-flex align-items-center">
-                            <a href="single.html" class="class-item-thumbnail">
+                            <a href="single.php" class="class-item-thumbnail">
                                 <img src="images/img_2.jpg" alt="Image">
                             </a>
                             <div class="class-item-text">
 
-                                <h2><a href="single.html">Fitness Class Name #2</a></h2>
+                                <h2><a href="single.php">Fitness Class Name #2</a></h2>
                                 <span>By Justin Daniel</span>,
                                 <span>30 minutes</span>
                             </div>
                         </div>
 
                         <div class="class-item d-flex align-items-center">
-                            <a href="single.html" class="class-item-thumbnail">
+                            <a href="single.php" class="class-item-thumbnail">
                                 <img src="images/img_3.jpg" alt="Image">
                             </a>
                             <div class="class-item-text">
 
-                                <h2><a href="single.html">Fitness Class Name #3</a></h2>
+                                <h2><a href="single.php">Fitness Class Name #3</a></h2>
                                 <span>By Justin Daniel</span>,
                                 <span>30 minutes</span>
                             </div>
                         </div>
 
                         <div class="class-item d-flex align-items-center">
-                            <a href="single.html" class="class-item-thumbnail">
+                            <a href="single.php" class="class-item-thumbnail">
                                 <img src="images/img_4.jpg" alt="Image">
                             </a>
                             <div class="class-item-text">
 
-                                <h2><a href="single.html">Fitness Class Name #4</a></h2>
+                                <h2><a href="single.php">Fitness Class Name #4</a></h2>
                                 <span>By Justin Daniel</span>,
                                 <span>30 minutes</span>
                             </div>
                         </div>
 
                         <div class="class-item d-flex align-items-center">
-                            <a href="single.html" class="class-item-thumbnail">
+                            <a href="single.php" class="class-item-thumbnail">
                                 <img src="images/img_1.jpg" alt="Image">
                             </a>
                             <div class="class-item-text">
 
-                                <h2><a href="single.html">Fitness Class Name #5</a></h2>
+                                <h2><a href="single.php">Fitness Class Name #5</a></h2>
                                 <span>By Justin Daniel</span>,
                                 <span>30 minutes</span>
                             </div>

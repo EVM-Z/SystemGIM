@@ -34,8 +34,7 @@
             <div class="col-md-12">
                 <div class=" pt-5">
                     <p>
-                        Copyright &copy;
-                            document.write(new Date().getFullYear());
+                        Copyright &copy; 2020
                         </script> All rights reserved | Todo nuestro trabajo esta hecho con
                         <i class="icon-heart text-danger" aria-hidden="true"></i>
                     </p>
