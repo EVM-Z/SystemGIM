@@ -1,5 +1,5 @@
 <?php 
-include 'inc/templates/header.php';
+include 'includes/templates/header.php';
 ?>
 
 
@@ -17,7 +17,13 @@ include 'inc/templates/header.php';
 
         <div class="row justify-content-center">
             <div class="col-md-7">
-                <form action="modelo-usuario.php" method="post" data-aos="fade">
+                <form name="guardar-registro" id="guardar-registro" method="POST" action="admin/pages/modelo-registro.php" data-aos="fade">
+
+                    <div class="form-group row justify-content-center">
+                        <div class="col-md-6">
+                            <input type="text" name="gimnasio" id="gimnasio" class="form-control" placeholder="Nombre del Gimnasio" required>
+                        </div>
+                    </div>
 
                     <div class="form-group row justify-content-center">
                         <div class="col-md-6">
@@ -33,8 +39,8 @@ include 'inc/templates/header.php';
 
                     <div class="form-group row justify-content-center">
                         <div class="col-md-6">
-                            <input type="submit" class="btn btn-primary py-3 px-5 btn-block" value="Crear cuenta">
-                            
+                            <input type="hidden" name="registro" value="nuevo">
+                            <input type="submit" class="btn btn-primary py-3 px-5 btn-block" id="crear_registro" value="Crear cuenta">
                         </div>
                     </div>
 
@@ -45,5 +51,5 @@ include 'inc/templates/header.php';
 </div>
 
 <?php
-include 'inc/templates/footer.php';
+include 'includes/templates/footer.php';
 ?>
