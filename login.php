@@ -1,5 +1,5 @@
 <?php 
-include 'inc/templates/header.php';
+include 'includes/templates/header.php';
 ?>
 
 <div class="site-section bg-light contact-wrap" id="contact-section">
@@ -54,5 +54,5 @@ include 'inc/templates/header.php';
 
 
 <?php
-include 'inc/templates/footer.php';
+include 'includes/templates/footer.php';
 ?>

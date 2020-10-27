@@ -1,5 +1,5 @@
 <?php
-include 'inc/templates/header.php';
+include 'includes/templates/header.php';
 ?>
 
 </head>
@@ -19,7 +19,7 @@ include 'inc/templates/header.php';
 
 
     <?php
-    include 'inc/templates/barra-navegacion.php';
+    include 'includes/templates/barra-navegacion.php';
     ?>
 
     <div class="bgimg" style="background-image: url('images/bg_2.jpg');" data-stellar-background-ratio="0.5">
@@ -72,5 +72,5 @@ include 'inc/templates/header.php';
     </div>
 
     <?php
-    include 'inc/templates/footer.php';
+    include 'includes/templates/footer.php';
     ?>

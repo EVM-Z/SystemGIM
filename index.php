@@ -1,5 +1,5 @@
 <?php
-include 'inc/templates/header.php';
+include 'includes/templates/header.php';
 ?>
 
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
@@ -18,7 +18,7 @@ include 'inc/templates/header.php';
 
         <!-- Barra de navegacion -->
         <?php 
-        include 'inc/templates/barra-navegacion.php';
+        include 'includes/templates/barra-navegacion.php';
         ?>
 
 
@@ -1386,7 +1386,7 @@ include 'inc/templates/header.php';
 
 
     <?php
-    include 'inc/templates/footer.php';
+    include 'includes/templates/footer.php';
     ?>
 
 
