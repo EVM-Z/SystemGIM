@@ -6,26 +6,23 @@ include '../../includes/funciones/conexion.php';
 if (isset($_POST['id_registro'])) {
     $id_registro = $_POST['id_registro'];
 }
-if (isset($_POST['gimnasio'])) {
-    $gimnasio = $_POST['gimnasio'];
+if (isset($_POST['email_registro'])) {
+    $email_registro = $_POST['email_registro'];
 }
-if (isset($_POST['email'])) {
-    $email = $_POST['email'];
-}
-if (isset($_POST['password'])) {
-    $password = $_POST['password'];
+if (isset($_POST['password_registro'])) {
+    $password_registro = $_POST['password_registro'];
     $opciones = array(
         'cost' => 12
     );
-    $password_hashed = password_hash($password, PASSWORD_BCRYPT, $opciones);
+    $password_hashed = password_hash($password_registro, PASSWORD_BCRYPT, $opciones);
 }
 
 
 if (isset($_POST['registro']) && $_POST['registro']  == 'nuevo') {
     try {  
         // php statement
-        $stmt = $conn->prepare("INSERT INTO registro (gimnasio, email, password) VALUES (?, ?, ?)");
-        $stmt->bind_param("sss", $gimnasio, $email, $password_hashed);
+        $stmt = $conn->prepare("INSERT INTO registro (email_registro, password_registro) VALUES (?, ?)");
+        $stmt->bind_param("ss", $email_registro, $password_hashed);
         $stmt->execute();
         $id_registro = $stmt->insert_id;
         // En caso de que no haya registro el $id_registro=0

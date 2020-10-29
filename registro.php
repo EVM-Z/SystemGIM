@@ -21,19 +21,13 @@ include 'includes/templates/header.php';
 
                     <div class="form-group row justify-content-center">
                         <div class="col-md-6">
-                            <input type="text" name="gimnasio" id="gimnasio" class="form-control" placeholder="Nombre del Gimnasio" required>
+                            <input type="email" name="email_registro" id="email_registro" class="form-control" placeholder="Email" required>
                         </div>
                     </div>
 
                     <div class="form-group row justify-content-center">
                         <div class="col-md-6">
-                            <input type="email" name="email" id="email" class="form-control" placeholder="Email" required>
-                        </div>
-                    </div>
-
-                    <div class="form-group row justify-content-center">
-                        <div class="col-md-6">
-                            <input type="password" name="password" id="password" class="form-control" placeholder="Contraseña" required>
+                            <input type="password" name="password_registro" id="password_registro" class="form-control" placeholder="Contraseña" required>
                         </div>
                     </div>
 
