@@ -19,6 +19,12 @@ include 'includes/templates/header.php';
             <div class="col-md-7">
                 <form name="guardar-registro" id="guardar-registro" method="POST" action="admin/pages/modelo-registro.php" data-aos="fade">
 
+                <div class="form-group row justify-content-center">
+                        <div class="col-md-6">
+                            <input type="text" name="gimnasio_registro" id="gimnasio_registro" class="form-control" placeholder="Nombre del Gimnasio" required>
+                        </div>
+                    </div>
+
                     <div class="form-group row justify-content-center">
                         <div class="col-md-6">
                             <input type="email" name="email_registro" id="email_registro" class="form-control" placeholder="Email" required>

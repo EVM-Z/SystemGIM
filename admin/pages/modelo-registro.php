@@ -17,12 +17,16 @@ if (isset($_POST['password_registro'])) {
     $password_hashed = password_hash($password_registro, PASSWORD_BCRYPT, $opciones);
 }
 
+if (isset($_POST['gimnasio_registro'])) {
+    $gimnasio_registro = $_POST['gimnasio_registro'];
+}
+
 
 if (isset($_POST['registro']) && $_POST['registro']  == 'nuevo') {
     try {  
         // php statement
-        $stmt = $conn->prepare("INSERT INTO registro (email_registro, password_registro) VALUES (?, ?)");
-        $stmt->bind_param("ss", $email_registro, $password_hashed);
+        $stmt = $conn->prepare("INSERT INTO registro (email_registro, password_registro, gimnasio_registro) VALUES (?, ?, ?)");
+        $stmt->bind_param("sss", $email_registro, $password_hashed, $gimnasio_registro);
         $stmt->execute();
         $id_registro = $stmt->insert_id;
         // En caso de que no haya registro el $id_registro=0
