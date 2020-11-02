@@ -18,8 +18,8 @@ $(document).ready(function() {
                 if (resultado.respuesta == 'exito') {
                     // Mensaje en popup
                     Swal.fire(
+                        'OK',
                         'Bienvenido',
-                        'Se guardó correctamente',
                         'success'
                     )
                     setTimeout(function() {
