@@ -61,3 +61,7 @@
 <script src="../../js/jquery.sticky.js"></script>
 <script src="../../js/jquery.mb.YTPlayer.min.js"></script>
 <script src="../../js/main.js"></script>
+<!-- SweetAlert -->
+<script src="../dist/js/sweetalert2.all.min.js"></script>
+<!-- Admin-AJAX -->
+<script src="../dist/js/admin-ajax.js"></script>

@@ -21,7 +21,7 @@
 <!-- SweetAlert -->
 <script src="../dist/js/sweetalert2.all.min.js"></script>
 <!-- Ajax -->
-<!-- <script src="../dist/js/admin-ajax.js"></script> -->
+<script src="../dist/js/admin-ajax.js"></script>
 <!-- Login -->
 <!-- <script src="../dist/js/login-ajax.js"></script> -->
 <!-- Bootstrap 4 -->

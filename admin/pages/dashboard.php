@@ -1,4 +1,6 @@
 <?php
+// Antes que nada, verificamos la sesion
+// include 'funciones/sesiones.php';
 include 'templates/header.php';
 include 'templates/barra-superior.php';
 include 'templates/barra-lateral.php';

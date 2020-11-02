@@ -33,7 +33,7 @@ include 'includes/templates/header.php';
                         <h1 class="mb-3">Administra tu GIMNASIO</h1>
                         <p class="lead mx-auto desc mb-5">Un sistema completo de control para tu gimnasio, con todo lo que tu necesitas, completamente en la Web y desde cualquier dispositivo a cualquier hora.</p>
                         <p class="text-center">
-                            <a href="registro.php" class="btn btn-outline-white py-3 px-5">Registrate</a>
+                            <a href="admin/pages/registro.php" class="btn btn-outline-white py-3 px-5">Registrate</a>
                         </p>
                     </div>
                 </div>
