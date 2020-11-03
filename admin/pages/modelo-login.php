@@ -2,48 +2,34 @@
 include 'funciones/funciones.php';
 
 // Comprobación de existencia y declaración de variables
-if (isset($_POST['id_registro'])) {
-    $id_registro = $_POST['id_registro'];
-}
-if (isset($_POST['email_registro'])) {
-    $email_registro = $_POST['email_registro'];
-}
-if (isset($_POST['password_registro'])) {
-    $password_registro = $_POST['password_registro'];
-    $opciones = array(
-        'cost' => 12
-    );
-    $password_hashed = password_hash($password_registro, PASSWORD_BCRYPT, $opciones);
+if (isset($_POST['email'])) {
+    $email = $_POST['email'];
 }
 
-if (isset($_POST['gimnasio_registro'])) {
-    $gimnasio_registro = $_POST['gimnasio_registro'];
+if (isset($_POST['password'])) {
+    $password = $_POST['password'];
 }
 
 
 if (isset($_POST['login'])) {
-
     try {
         // php statement
-        $stmt = $conn->prepare("SELECT * FROM registro WHERE email_registro = ?;");
-        $stmt->bind_param("s", $email_registro);
+        $stmt = $conn->prepare("SELECT id_registro, email_registro, password_registro FROM registro WHERE email_registro = ?;");
+        // Información que manda el usuario en el frontend
+        $stmt->bind_param("s", $email);
         $stmt->execute();
+        // bind_result -> Sirve para consultar la BD con el SELECT y para que despues nos devuelva un valor
         $stmt->bind_result($id_registro, $email_registro, $password_registro);
         if ($stmt->affected_rows) {
             $existe = $stmt->fetch();
             if($existe){
-                // Si el usuario existe
-                if (password_verify($password_registro, $password_admin)) {
-                    session_start();
-                    $_SESSION['usuario'] = $usuario_admin;
-                    $_SESSION['nombre'] = $nombre_admin;
-                    $_SESSION['nivel'] = $nivel;
-                    $_SESSION['id'] = $id_admin;
+                // password_verify() es para mandar la contraseña, hashear y luego comparar con el que esta en la BD
+                // Dos parametros, 1. password que escribe el usuario 2. password que recibe de la BD
+                if (password_verify($password, $password_registro)) {
                     $respuesta = array(
                         'respuesta' => 'exitoso',
-                        'usuario' => $nombre_admin
                     );
-                } else{
+                } else {
                     $respuesta = array(
                         'respuesta' => 'error'
                     );
@@ -55,11 +41,9 @@ if (isset($_POST['login'])) {
                 );
             }
         }
-
         // Cerramos las conexiones
         $stmt->close();
         $conn->close();
-
     } catch (Exception $e) {
         echo "Error:" . $e->getMessage();
     }

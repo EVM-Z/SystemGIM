@@ -16,23 +16,25 @@ include 'templates/header-workout.php';
 
         <div class="row justify-content-center">
             <div class="col-md-7">
+                <!-- Información que se manda al admin-ajax.php -->
                 <form name="login" id="login" method="POST" action="modelo-login.php" data-aos="fade">
 
                     <div class="form-group row justify-content-center">
                         <div class="col-md-6">
-                            <input type="email" class="form-control" name="email_registro" id="email_registro" placeholder="Email">
+                            <input type="email" class="form-control" name="email" id="email" placeholder="Email">
                         </div>
                     </div>
 
                     <div class="form-group row justify-content-center">
                         <div class="col-md-6">
-                            <input type="password" class="form-control" name="password_registro" id="password_registro" placeholder="Password">
+                            <input type="password" class="form-control" name="password" id="password" placeholder="Password">
                         </div>
                     </div>
 
                     <div class="form-group row justify-content-center">
                         <div class="col-md-6">
-                            <input type="hidden" name="login" value="">
+                            <!-- Parametros que se mandan al if del modelo-login.php -->
+                            <input type="hidden" name="login" value="1">
                             <input type="submit" class="btn btn-primary py-3 px-5 btn-block" value="Entrar">
                         </div>
                     </div>
