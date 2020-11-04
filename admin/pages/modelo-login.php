@@ -26,6 +26,10 @@ if (isset($_POST['login'])) {
                 // password_verify() es para mandar la contraseña, hashear y luego comparar con el que esta en la BD
                 // Dos parametros, 1. password que escribe el usuario 2. password que recibe de la BD
                 if (password_verify($password, $password_registro)) {
+                    // Iniciamos sesion
+                    session_start();
+                    $_SESSION['email'] = $email_registro;
+                    $_SESSION['password'] = $password_registro;
                     $respuesta = array(
                         'respuesta' => 'exitoso',
                     );

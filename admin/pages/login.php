@@ -1,4 +1,16 @@
 <?php
+
+error_reporting(E_ALL ^ E_NOTICE);
+// Toma la sesion actual
+session_start();
+// El valor $_GET['cerrar_sesion']; lo toma de barra-lateral.php del boton Salir
+$cerrar_sesion = $_GET['cerrar_sesion'];
+if ($cerrar_sesion) {
+    // Cerramos sesion
+    session_destroy();
+}
+
+
 include 'funciones/funciones.php';
 include 'templates/header-workout.php';
 ?>
@@ -16,6 +28,7 @@ include 'templates/header-workout.php';
 
         <div class="row justify-content-center">
             <div class="col-md-7">
+
                 <!-- Información que se manda al admin-ajax.php -->
                 <form name="login" id="login" method="POST" action="modelo-login.php" data-aos="fade">
 
