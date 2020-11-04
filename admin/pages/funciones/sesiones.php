@@ -9,6 +9,7 @@ function usuario_autenticado(){
 }
 
 function revisar_usuario(){
+    // isset() te dice si una variable existe o no
     // Revisamos el email exista o que tenga un valor
     return isset($_SESSION['email']);
 }

@@ -32,6 +32,10 @@ if (isset($_POST['guardar']) && $_POST['guardar']  == 'nuevo') {
         $id_registro = $stmt->insert_id;
         // En caso de que no haya registro el $id_registro=0
         if ($id_registro > 0) {
+            // Iniciamos sesion
+            session_start();
+            $_SESSION['email'] = $email_registro;
+            $_SESSION['password'] = $password_hashed;
             $respuesta = array(
                 'respuesta' => 'exito',
                 'id_admin' => $id_registro

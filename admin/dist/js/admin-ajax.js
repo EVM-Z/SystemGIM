@@ -22,9 +22,9 @@ $(document).ready(function() {
                         'Registro guardado',
                         'success'
                     )
-                    // setTimeout(function() {
-                    //     window.location.href = 'dashboard.php';
-                    // }, 3000);
+                    setTimeout(function() {
+                        window.location.href = 'dashboard.php';
+                    }, 2000);
                 } else {
                     Swal.fire(
                         'Error',
