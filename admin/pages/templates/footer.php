@@ -29,6 +29,8 @@
 <!-- DataTables -->
 <script src="../plugins/datatables/jquery.dataTables.js"></script>
 <script src="../plugins/datatables-bs4/js/dataTables.bootstrap4.js"></script>
+<!-- Funcionalidades de componentes JS -->
+<script src="../dist/js/app.js"></script>
 <!-- Formato en Español para el DataTables -->
 <!-- <script src="../dist/js/app.js"></script> -->
 <!-- AdminLTE App -->
