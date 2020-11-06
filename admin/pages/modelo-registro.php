@@ -1,5 +1,5 @@
 <?php
-
+error_reporting(E_ALL ^ E_NOTICE);
 include 'funciones/funciones.php';
 
 // Comprobación de existencia y declaración de variables
@@ -22,7 +22,7 @@ if (isset($_POST['gimnasio_registro'])) {
 }
 
 
-if (isset($_POST['guardar']) && $_POST['guardar']  == 'nuevo') {
+if (isset($_POST['registro']) && $_POST['registro']  == 'nuevo') {
     try {  
         // php statement
         $stmt = $conn->prepare("INSERT INTO registro (email_registro, password_registro, gimnasio_registro) VALUES (?, ?, ?)");

@@ -55,7 +55,7 @@ include 'templates/header-workout.php';
                     <div class="form-group row justify-content-center">
                         <div class="col-md-6">
                             <!-- Parametros que se mandan al if del modelo-registro.php -->
-                            <input type="hidden" name="guardar" value="nuevo">
+                            <input type="hidden" name="registro" value="nuevo">
                             <input type="submit" class="btn btn-primary py-3 px-5 btn-block" id="" value="Crear cuenta">
                         </div>
                     </div>
