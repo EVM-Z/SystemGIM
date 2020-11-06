@@ -34,13 +34,13 @@ include 'templates/header-workout.php';
 
                     <div class="form-group row justify-content-center">
                         <div class="col-md-6">
-                            <input type="email" class="form-control" name="email" id="email" placeholder="Email">
+                            <input type="email" class="form-control" name="email" id="email" placeholder="Email" required>
                         </div>
                     </div>
 
                     <div class="form-group row justify-content-center">
                         <div class="col-md-6">
-                            <input type="password" class="form-control" name="password" id="password" placeholder="Password">
+                            <input type="password" class="form-control" name="password" id="password" placeholder="Password" required>
                         </div>
                     </div>
 
