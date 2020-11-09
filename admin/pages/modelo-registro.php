@@ -3,9 +3,6 @@ error_reporting(E_ALL ^ E_NOTICE);
 include 'funciones/funciones.php';
 
 // Comprobación de existencia y declaración de variables
-if (isset($_POST['id_registro'])) {
-    $id_registro = $_POST['id_registro'];
-}
 if (isset($_POST['email_registro'])) {
     $email_registro = $_POST['email_registro'];
 }
@@ -38,7 +35,7 @@ if (isset($_POST['registro']) && $_POST['registro']  == 'nuevo') {
             $_SESSION['password'] = $password_hashed;
             $respuesta = array(
                 'respuesta' => 'exito',
-                'id_admin' => $id_registro
+                'id_registro' => $id_registro
             );
         } else{
             $respuesta = array(
