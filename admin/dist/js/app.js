@@ -22,4 +22,13 @@ $(function(){
         }
     });
 
+    // Categoria Seleccion
+    $('.seleccionar').select2();
+
+    // Fecha Evento
+    $('#fecha').datetimepicker({
+        locale: 'es',
+         format: 'L',
+    });
+
 });
