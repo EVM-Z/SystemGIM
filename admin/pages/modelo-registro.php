@@ -22,7 +22,7 @@ if (isset($_POST['gimnasio_registro'])) {
 if (isset($_POST['registro']) && $_POST['registro']  == 'nuevo') {
     try {  
         // php statement
-        $stmt = $conn->prepare("INSERT INTO registro (email_registro, password_registro, gimnasio_registro) VALUES (?, ?, ?)");
+        $stmt = $conn->prepare("INSERT INTO registro (email_registro, password_registro, gimnasio_registro) VALUES (?, ?, ?) ");
         $stmt->bind_param("sss", $email_registro, $password_hashed, $gimnasio_registro);
         $stmt->execute();
         // insert_id es un valor de $stmt

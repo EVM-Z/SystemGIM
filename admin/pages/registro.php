@@ -32,7 +32,7 @@ include 'templates/header-workout.php';
             <div class="col-md-7">
 
                 <!-- Información que se manda al admin-ajax.php -->
-                <form name="guardar-registro" id="guardar-registro" method="POST" action="modelo-registro.php" data-aos="fade">
+                <form name="guardar-registro-inicio" id="guardar-registro-inicio" method="POST" action="modelo-registro.php" data-aos="fade">
 
                 <div class="form-group row justify-content-center">
                         <div class="col-md-6">
