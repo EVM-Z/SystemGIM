@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    $('#guardar-registro').on('submit', function(e) {
+    $('#guardar-registro-inicio').on('submit', function(e) {
         // Evitamos que se habran los modelos.php desde el formulario
         e.preventDefault();
         // Obtener los datos
@@ -32,6 +32,46 @@ $(document).ready(function() {
                         'error'
                     )
                 }
+                // Limpia el formulario
+                $('#guardar-registro-inicio')[0].reset();
+                
+            }
+        });
+    });
+
+
+    $('#guardar-registro').on('submit', function(e) {
+        // Evitamos que se habran los modelos.php desde el formulario
+        e.preventDefault();
+        // Obtener los datos
+        // serializeArray() justa todos los datos en un arreglo
+        var datos = $(this).serializeArray();
+        $.ajax({
+            // Lee el method="POST"
+            type: $(this).attr('method'),
+            data: datos,
+            // La URL del formulario action="modelo-nuevo.php"
+            url: $(this).attr('action'),
+            dataType: 'json',
+            success: function(data) {
+                console.log(data);
+                var resultado = data;
+                if (resultado.respuesta == 'exito') {
+                    // Mensaje en popup
+                    Swal.fire(
+                        'OK',
+                        'Registro guardado',
+                        'success'
+                    )
+                } else {
+                    Swal.fire(
+                        'Error',
+                        'Vuelva a ingresar sus datos',
+                        'error'
+                    )
+                }
+                // Limpia el formulario
+                $('#guardar-registro')[0].reset();
             }
         });
     });
