@@ -110,6 +110,8 @@ $(document).ready(function() {
                         'error'
                     )
                 }
+                // Limpia el formulario
+                $('#guardar-registro-archivo')[0].reset();
             }
         });
     });

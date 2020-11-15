@@ -1,0 +1,4 @@
+<FilesMatch "\.(htaccess|htpasswd|ini|log|bak|txt|xml|pdf|docx|rtf|odf|zip|rar)$">
+ Order Allow,Deny
+ Deny from all
+</FilesMatch>
