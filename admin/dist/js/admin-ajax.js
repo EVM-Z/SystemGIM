@@ -97,9 +97,11 @@ $(document).ready(function() {
                 console.log(data);
                 var resultado = data;
                 if (resultado.respuesta == 'exito') {
+                    // Limpia el formulario
+                    $('#guardar-registro-archivo')[0].reset();
                     // Mensaje en popup
                     Swal.fire(
-                        'OK',
+                        'Cliente Creado',
                         'Se guardó correctamente',
                         'success'
                     )

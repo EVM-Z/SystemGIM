@@ -67,10 +67,10 @@ include 'templates/barra-lateral.php';
 
               <div class="form-group row justify-content-center">
                 <div class="col-md-3">
-                  <h6 class="">Correo Electronico*</h6>
+                  <h6 class="">Correo Electronico</h6>
                 </div>
                 <div class="col-md-9">
-                  <input type="email" class="form-control" name="email" id="email" placeholder="ejemplo@ejemplo.com" required>
+                  <input type="email" class="form-control" name="email" id="email" placeholder="ejemplo@ejemplo.com">
                 </div>
               </div>
 
@@ -79,16 +79,16 @@ include 'templates/barra-lateral.php';
                   <h6 class="">Fecha de Nacimiento*</h6>
                 </div>
                 <div class="col-md-9 input-group date" id="fecha" data-target-input="nearest">
-                  <input type="text" name="fecha" id="fecha" class="form-control datetimepicker-input" data-toggle="datetimepicker" placeholder="dd/mm/aa" data-target="#fecha" data-toggle="datetimepicker">
+                  <input type="text" name="fecha" id="fecha" class="form-control datetimepicker-input" data-toggle="datetimepicker" placeholder="dd/mm/aa" data-target="#fecha" data-toggle="datetimepicker" required>
                 </div>
               </div>
 
               <div class="form-group row justify-content-center">
                 <div class="col-md-3">
-                  <h6 class="">Telefono</h6>
+                  <h6 class="">Telefono*</h6>
                 </div>
                 <div class="col-md-9">
-                  <input type="text" class="form-control" name="telefono" id="telefono" placeholder="">
+                  <input type="text" class="form-control" name="telefono" id="telefono" placeholder="" required>
                 </div>
               </div>
 
@@ -135,15 +135,6 @@ include 'templates/barra-lateral.php';
                 <input type="hidden" name="registro" value="nuevo">
                 <input type="submit" class="btn btn-primary" id="" value="Crear Cliente">
               </div>
-
-              
-
-              
-
-              
-
-              
-              
             </form>
           </div>
           
