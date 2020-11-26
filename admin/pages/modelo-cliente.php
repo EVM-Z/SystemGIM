@@ -28,18 +28,6 @@ if (isset($_POST['gimnasio'])) {
     $gimnasio = $_POST['gimnasio'];
 }
 
-    
-// $nombre = $_POST['nombre'];
-// $apellido = $_POST['apellido'];
-// $email = $_POST['email'];
-// $telefono = $_POST['telefono'];
-// $fecha = $_POST['fecha'];
-// Cambiamos la fecha al formato de la BD
-// $fecha_formateada = date('Y-m-d', strtotime($fecha));
-// $gimnasio = $_POST['gimnasio'];
-// $imagen_cliente = $_POST['imagen_cliente'];
-
-
 
 if (isset($_POST['registro']) && $_POST['registro']  == 'nuevo') {
 

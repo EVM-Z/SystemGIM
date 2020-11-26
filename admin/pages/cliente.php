@@ -1,4 +1,5 @@
 <?php
+
 // Antes que nada, verificamos la sesion
 include 'funciones/sesiones.php';
 include 'funciones/funciones.php';
@@ -31,7 +32,6 @@ include 'templates/barra-lateral.php';
       </div><!-- /.container-fluid -->
     </div>
     <!-- /.content-header -->
-
 
 
     <div class="modal fade" id="registroCliente" tabindex="-1" role="dialog" aria-labelledby="registroClienteLabel" aria-hidden="true">
@@ -156,40 +156,61 @@ include 'templates/barra-lateral.php';
             <table id="registros" class="table table-bordered table-striped">
               <thead>
               <tr>
-                <th>Rendering engine</th>
-                <th>Browser</th>
-                <th>Platform(s)</th>
-                <th>Engine version</th>
-                <th>CSS grade</th>
+                <th>Imagen</th>
+                <th>Nombre</th>
+                <th>Email</th>
+                <th>Telefono</th>
+                <th>Gimnasio</th>
+                <th>Acciones</th>
               </tr>
               </thead>
               <tbody>
-              <tr>
-                <td>Trident</td>
-                <td>Internet
-                  Explorer 4.0
-                </td>
-                <td>Win 95+</td>
-                <td> 4</td>
-                <td>X</td>
-              </tr>
-              <tr>
-                <td>Trident</td>
-                <td>Internet
-                  Explorer 5.0
-                </td>
-                <td>Win 95+</td>
-                <td>5</td>
-                <td>C</td>
-              </tr>
+                    <?php
+                      try {
+                        $sql = "SELECT * ";
+                        $sql .= " FROM cliente ";
+                        $sql .= " INNER JOIN registro ";
+                        $sql .= " ON cliente.gimnasio=registro.id_registro ";
+                        $sql .= " ORDER BY id_cliente ";
+                        $resultado = $conn->query($sql);
+                      } catch (Exception $e) {
+                        $error = $e->getMessage();
+                        echo $error;
+                      }
+                      while($cliente = $resultado->fetch_assoc()) { ?>
+                        <tr>
+                          <td><img src="../dist/img/clientes/<?php echo $cliente['url_imagen_cliente']; ?>" width="100" alt=""></td>
+                          <td><?php echo $cliente['nombre_cliente'] . " " . $cliente['apellido_cliente']; ?></td>
+                          <td><?php echo $cliente['email_cliente']; ?></td>
+                          <td><?php echo $cliente['telefono_cliente']; ?></td>
+                          <td><?php echo $cliente['gimnasio_registro']; ?></td>
+
+                          <td>
+                            <!-- <a title="Ver Todo" href="editar-cliente.php?id=<?php echo $cliente['id_cliente']; ?>" class="btn bg-gradient-primary btn-sm margin">
+                            <i class="fas fa-list-alt"></i>
+                            </a> -->
+                            <a title="Editar" href="editar-cliente.php?id=<?php echo $cliente['id_cliente']; ?>" class="btn bg-gradient-warning btn-sm margin">
+                            <i class="fas fa-pencil-alt"></i>
+                            </a>
+                            <a title="Eliminar" href="#" data-id="<?php echo $eventos['id_cliente']; ?>" data-tipo="evento" class="btn bg-gradient-danger btn-sm borrar_registro">
+                            <i class="fas fa-trash-alt"></i>
+                            </a>
+                          </td>
+                        </tr>
+                      <?php } ?>
+
+
+
+
               </tbody>
               <tfoot>
               <tr>
-                <th>Rendering engine</th>
-                <th>Browser</th>
-                <th>Platform(s)</th>
-                <th>Engine version</th>
-                <th>CSS grade</th>
+                <th>Imagen</th>
+                <th>Nombre</th>
+                <th>Email</th>
+                <th>Telefono</th>
+                <th>Gimnasio</th>
+                <th>Acciones</th>
               </tr>
               </tfoot>
             </table>
