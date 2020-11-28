@@ -22,12 +22,6 @@ include 'templates/barra-lateral.php';
               </div>
             </div>
           </div><!-- /.col -->
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Clientes</li>
-            </ol>
-          </div><!-- /.col -->
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
     </div>
@@ -58,7 +52,7 @@ include 'templates/barra-lateral.php';
 
               <div class="form-group row justify-content-center">
                 <div class="col-md-3">
-                  <h6 class="">Apellido*</h6>
+                  <h6 class="">Apellidos*</h6>
                 </div>
                 <div class="col-md-9">
                   <input type="text" class="form-control" name="apellido" id="apellido" placeholder="Armstrong" required>
@@ -170,7 +164,7 @@ include 'templates/barra-lateral.php';
                         $sql = "SELECT * ";
                         $sql .= " FROM cliente ";
                         $sql .= " INNER JOIN registro ";
-                        $sql .= " ON cliente.gimnasio=registro.id_registro ";
+                        $sql .= " ON cliente.gimnasio_cliente=registro.id_registro ";
                         $sql .= " ORDER BY id_cliente ";
                         $resultado = $conn->query($sql);
                       } catch (Exception $e) {

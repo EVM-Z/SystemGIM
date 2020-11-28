@@ -101,7 +101,7 @@ $(document).ready(function() {
                     $('#guardar-registro-archivo')[0].reset();
                     // Mensaje en popup
                     Swal.fire(
-                        'Cliente Creado',
+                        'OK',
                         'Se guardó correctamente',
                         'success'
                     )
