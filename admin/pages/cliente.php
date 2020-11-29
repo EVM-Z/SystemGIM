@@ -186,7 +186,8 @@ include 'templates/barra-lateral.php';
                             <a title="Editar" href="editar-cliente.php?id=<?php echo $cliente['id_cliente']; ?>" class="btn bg-gradient-warning btn-sm margin">
                             <i class="fas fa-pencil-alt"></i>
                             </a>
-                            <a title="Eliminar" href="#" data-id="<?php echo $eventos['id_cliente']; ?>" data-tipo="evento" class="btn bg-gradient-danger btn-sm borrar_registro">
+                            <!-- Se manda al admin-ajax.js -->
+                            <a title="Eliminar" href="#" data-id="<?php echo $cliente['id_cliente']; ?>" data-tipo="cliente" class="btn bg-gradient-danger btn-sm borrar_registro">
                             <i class="fas fa-trash-alt"></i>
                             </a>
                           </td>

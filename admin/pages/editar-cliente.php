@@ -28,9 +28,9 @@ include 'templates/barra-lateral.php';
                       $resultado = $conn->query($sql);
                       $cliente = $resultado->fetch_assoc();
                       // Imprimimos el array de la tabla cliente
-                      echo "<pre>";
-                      var_dump($cliente);
-                      echo "</pre>";
+                      // echo "<pre>";
+                      // var_dump($cliente);
+                      // echo "</pre>";
                       ?>
 
                 </div>
