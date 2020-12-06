@@ -26,7 +26,7 @@ $(document).ready(function() {
                     // )
                     setTimeout(function() {
                         window.location.href = 'dashboard.php';
-                    }, 1000);
+                    }, 500);
                 } else {
                     Swal.fire(
                         'Error',
@@ -195,7 +195,7 @@ $(document).ready(function() {
                     // )
                     setTimeout(function() {
                         window.location.href = 'dashboard.php';
-                    }, 1000);
+                    }, 500);
                 } else {
                     Swal.fire(
                         'Error',

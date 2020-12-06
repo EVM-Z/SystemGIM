@@ -32,6 +32,7 @@ include 'templates/header-workout.php';
             <div class="col-md-7">
 
                 <!-- Información que se manda al admin-ajax.php -->
+                <!-- enctype="multipart/form-data" es para cuando se manejan archivos -->
                 <form name="guardar-registro-inicio" id="guardar-registro-inicio" method="POST" action="modelo-registro.php" data-aos="fade">
 
                 <div class="form-group row justify-content-center">

@@ -2,8 +2,8 @@
     <div class="container">
         <div class="row">
             <div class="col-md-4">
-                <h3 class="text-white">Acerca de ALFA</h3>
-                <p>ALFA es un gestor de gimnasio para un mejor control y manejo de los clientes.</p>
+                <h3 class="text-white">Acerca de Workout</h3>
+                <p>Workout es un gestor de gimnasio para un mejor control y manejo de los clientes.</p>
             </div>
 
             <div class="col-md-3 ml-auto">

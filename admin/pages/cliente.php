@@ -79,10 +79,10 @@ include 'templates/barra-lateral.php';
 
               <div class="form-group row justify-content-center">
                 <div class="col-md-3">
-                  <h6 class="">Telefono*</h6>
+                  <h6 class="">Telefono</h6>
                 </div>
                 <div class="col-md-9">
-                  <input type="text" class="form-control" name="telefono" id="telefono" placeholder="" required>
+                  <input type="text" class="form-control" name="telefono" id="telefono" placeholder="">
                 </div>
               </div>
 
@@ -113,13 +113,19 @@ include 'templates/barra-lateral.php';
 
               <div class="form-group row justify-content-center">
                 <div class="col-md-3">
-                  <h6>Imagen</h6>
+                  <h6>Imagen*</h6>
                 </div>
                 <div class="col-md-9 input-group">
                   <div class="custom-file">
                       <input type="file" class="custom-file-input" id="imagen_cliente" name="archivo_imagen">
                       <label class="custom-file-label" for="imagen_cliente">Elije una imagen</label>
                   </div>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <div class="col-md-6 text-secondary">
+                  <p>* Campos Obligatorios</p>
                 </div>
               </div>
 
@@ -142,9 +148,6 @@ include 'templates/barra-lateral.php';
     <section class="content">
       <div class="container-fluid">
         <div class="card">
-          <div class="card-header">
-            <h3 class="card-title">Clientes</h3>
-          </div>
           <!-- /.card-header -->
           <div class="card-body">
             <table id="registros" class="table table-bordered table-striped">

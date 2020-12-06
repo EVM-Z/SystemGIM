@@ -52,11 +52,12 @@ include 'templates/header-workout.php';
                         </div>
                     </div>
 
-                    <div class="form-group row justify-content-center">
-                        <div class="row">
-                            <p class="#">¿No tienes usuario?</p>
+                    <div class="form-group">
+                        <div class="row justify-content-center">
                             <a href="registro.php">Crea una cuenta</a>
-                            
+                        </div>
+                        <div class="row justify-content-center">
+                            <a href="recuperar-password.php">Recuperar Contraseña</a>
                         </div>
                     </div>
 
