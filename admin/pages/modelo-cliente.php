@@ -116,7 +116,7 @@ if ($_POST['registro']  == 'editar') {
         $estado = $stmt->execute();
         
         if ($estado == true) {
-            // Si se hizo una modificacion
+            // Si se hizo una modificación
             $respuesta = array(
                 'respuesta' => 'exito',
                 'id_actualizado' => $id_cliente

@@ -30,5 +30,4 @@ $(function(){
         locale: 'es',
          format: 'L',
     });
-
 });

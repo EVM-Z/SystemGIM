@@ -31,6 +31,7 @@ if (isset($_POST['registro']) && $_POST['registro']  == 'nuevo') {
         if ($id_registro > 0) {
             // Iniciamos sesion
             session_start();
+            $_SESSION['id'] = $id_registro;
             $_SESSION['email'] = $email_registro;
             $_SESSION['password'] = $password_hashed;
             $respuesta = array(

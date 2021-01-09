@@ -6,6 +6,10 @@ include 'funciones/funciones.php';
 include 'templates/header.php';
 include 'templates/barra-superior.php';
 include 'templates/barra-lateral.php';
+
+// Obtenemos el id de la sesion
+$id = $_SESSION['id'];
+
 ?>
 
   <!-- Content Wrapper. Contains page content -->
@@ -40,7 +44,7 @@ include 'templates/barra-lateral.php';
           <div class="modal-body">
             <!-- Información que se manda al admin-ajax.php -->
             <!-- enctype="multipart/form-data" es para cuando se manejan archivos -->
-            <form name="guardar-registro-archivo" id="guardar-registro-archivo" method="POST" action="modelo-cliente.php" enctype="multipart/form-data" data-aos="fade">
+            <form name="guardar-registro-cliente" id="guardar-registro-cliente" method="POST" action="modelo-cliente.php" enctype="multipart/form-data" data-aos="fade">
               <div class="form-group row justify-content-center">
                 <div class="col-md-3">
                   <h6 class="">Nombre*</h6>
@@ -96,7 +100,7 @@ include 'templates/barra-lateral.php';
                 <option value="0">- Seleccione -</option>
                   <?php
                     try {
-                      $sql = "SELECT * FROM registro ";
+                      $sql = "SELECT * FROM registro WHERE id_registro = $id ";
                       $resultado = $conn->query($sql);
                       while ($gimnasio_registro = $resultado->fetch_assoc()) { ?>
                         <option value="<?php echo $gimnasio_registro['id_registro']; ?>">
@@ -154,6 +158,7 @@ include 'templates/barra-lateral.php';
               <thead>
               <tr>
                 <th>Imagen</th>
+                <th>ID</th>
                 <th>Nombre</th>
                 <th>Email</th>
                 <th>Telefono</th>
@@ -168,7 +173,8 @@ include 'templates/barra-lateral.php';
                         $sql .= " FROM cliente ";
                         $sql .= " INNER JOIN registro ";
                         $sql .= " ON cliente.gimnasio_cliente=registro.id_registro ";
-                        $sql .= " ORDER BY id_cliente ";
+                        $sql .= " WHERE gimnasio_cliente = $id ";
+                        $sql .= " ORDER BY id_cliente DESC ";
                         $resultado = $conn->query($sql);
                       } catch (Exception $e) {
                         $error = $e->getMessage();
@@ -177,6 +183,7 @@ include 'templates/barra-lateral.php';
                       while($cliente = $resultado->fetch_assoc()) { ?>
                         <tr>
                           <td><img src="../dist/img/clientes/<?php echo $cliente['url_imagen_cliente']; ?>" width="100" alt=""></td>
+                          <td><?php echo $cliente['id_cliente']; ?></td>
                           <td><?php echo $cliente['nombre_cliente'] . " " . $cliente['apellido_cliente']; ?></td>
                           <td><?php echo $cliente['email_cliente']; ?></td>
                           <td><?php echo $cliente['telefono_cliente']; ?></td>
@@ -204,6 +211,7 @@ include 'templates/barra-lateral.php';
               <tfoot>
               <tr>
                 <th>Imagen</th>
+                <th>ID</th>
                 <th>Nombre</th>
                 <th>Email</th>
                 <th>Telefono</th>

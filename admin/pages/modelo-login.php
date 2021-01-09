@@ -28,6 +28,7 @@ if (isset($_POST['login'])) {
                 if (password_verify($password, $password_registro)) {
                     // Iniciamos sesion
                     session_start();
+                    $_SESSION['id'] = $id_registro;
                     $_SESSION['email'] = $email_registro;
                     $_SESSION['password'] = $password_registro;
                     $respuesta = array(

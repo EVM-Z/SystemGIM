@@ -10,7 +10,6 @@ if ($cerrar_sesion) {
     session_destroy();
 }
 
-
 include 'funciones/funciones.php';
 include 'templates/header-workout.php';
 ?>

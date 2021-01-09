@@ -24,9 +24,16 @@
           </li>
           
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="check.php" class="nav-link">
               <i class="far fa-calendar-check nav-icon"></i>
               <p>Check</p>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="historial.php" class="nav-link">
+              <i class="fas fa-history nav-icon"></i>
+              <p>Historial</p>
             </a>
           </li>
 
