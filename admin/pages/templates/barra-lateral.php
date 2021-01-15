@@ -30,12 +30,12 @@
             </a>
           </li>
 
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a href="historial.php" class="nav-link">
               <i class="fas fa-history nav-icon"></i>
               <p>Historial</p>
             </a>
-          </li>
+          </li> -->
 
           <li class="nav-item">
             <a href="cliente.php" class="nav-link">
@@ -44,12 +44,12 @@
             </a>
           </li>
 
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="fas fa-user nav-icon"></i>
               <p>Mi Perfil</p>
             </a>
-          </li>
+          </li> -->
 
           <li class="nav-item">
             <a href="login.php?cerrar_sesion=true" class="nav-link">
