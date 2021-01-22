@@ -121,7 +121,6 @@ include 'templates/barra-lateral.php';
               
 
               <!-- Seccion de Graficos de Barras -->
-              <!-- Se comunica con el archivo dashboard3.js -->
               <div class="col-lg-9">
                 <div class="card">
                   <div class="card-header border-0">
@@ -140,6 +139,7 @@ include 'templates/barra-lateral.php';
                     <!-- /.d-flex -->
 
                     <div class="position-relative mb-4">
+                      <!-- Se comunica con el archivo dashboard3.js -->
                       <canvas id="sales-chart" height="200"></canvas>
                     </div>
 
