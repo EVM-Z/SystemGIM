@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 10-01-2021 a las 06:10:48
+-- Tiempo de generación: 29-01-2021 a las 03:45:41
 -- Versión del servidor: 10.4.17-MariaDB
 -- Versión de PHP: 8.0.0
 
@@ -109,7 +109,15 @@ INSERT INTO `entrada_salida` (`id_entrada_salida`, `cliente_entrada_salida`, `fe
 (67, 20, '2021-01-08', '21:00:22'),
 (68, 21, '2021-01-08', '21:01:19'),
 (69, 21, '2021-01-08', '21:02:26'),
-(70, 45, '2021-01-09', '14:41:09');
+(70, 45, '2021-01-09', '14:41:09'),
+(71, 22, '2021-01-12', '21:23:18'),
+(72, 22, '2021-01-12', '21:23:57'),
+(73, 48, '2021-01-12', '21:27:23'),
+(74, 48, '2021-01-12', '21:27:26'),
+(75, 48, '2021-01-13', '21:50:07'),
+(76, 48, '2021-01-13', '21:50:24'),
+(77, 34, '2021-01-16', '22:12:42'),
+(78, 21, '2021-01-19', '23:08:00');
 
 -- --------------------------------------------------------
 
@@ -187,7 +195,7 @@ ALTER TABLE `cliente`
 -- AUTO_INCREMENT de la tabla `entrada_salida`
 --
 ALTER TABLE `entrada_salida`
-  MODIFY `id_entrada_salida` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
+  MODIFY `id_entrada_salida` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79;
 
 --
 -- AUTO_INCREMENT de la tabla `registro`
