@@ -79,7 +79,7 @@ $(document).ready(function() {
     });
 
     // Se ejecuta dentro del AdminLTE
-    $('#guardar-registro-check').on('submit', function(e) {
+    $('#guardar-registro-entrada-salida').on('submit', function(e) {
         // Evitamos que se habran los modelos.php desde el formulario
         e.preventDefault();
         // Obtener los datos
@@ -97,7 +97,7 @@ $(document).ready(function() {
                 var resultado = data;
                 if (resultado.respuesta == 'exito') {
                     // Limpia el formulario
-                    $('#guardar-registro-check')[0].reset();
+                    $('#guardar-registro-entrada-salida')[0].reset();
                     // Mensaje en popup
                     Swal.fire(
                         'OK',

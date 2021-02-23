@@ -17,12 +17,12 @@ $id = $_SESSION['id'];
     <!-- Content Header (Page header) -->
     <div class="content-header">
       <div class="container-fluid">
-        <div class="row mb-2">
+      <div class="row mb-2">
           <div class="col-sm-6">
             <div class="row">
-              <h1 class="m-0 text-dark">Clientes</h1>
+              <h1 class="m-0 text-dark">Pagos</h1>
               <div class="col-md-auto">
-                <button type="button" class="btn btn-block btn-primary" data-toggle="modal" data-target="#registroCliente"><i class="fas fa-plus"></i></button>
+                <button type="button" class="btn btn-block btn-primary" data-toggle="modal" data-target="#registroPago"><i class="fas fa-plus"></i></button>
               </div>
             </div>
           </div><!-- /.col -->
@@ -31,12 +31,11 @@ $id = $_SESSION['id'];
     </div>
     <!-- /.content-header -->
 
-
-    <div class="modal fade" id="registroCliente" tabindex="-1" role="dialog" aria-labelledby="registroClienteLabel" aria-hidden="true">
+    <div class="modal fade" id="registroPago" tabindex="-1" role="dialog" aria-labelledby="registroPagoLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="registroClienteLabel">Nuevo Cliente</h5>
+            <h5 class="modal-title" id="registroPagoLabel">Nuevo Pago</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -44,67 +43,23 @@ $id = $_SESSION['id'];
           <div class="modal-body">
             <!-- Información que se manda al admin-ajax.php -->
             <!-- enctype="multipart/form-data" es para cuando se manejan archivos -->
-            <form name="guardar-registro-cliente" id="guardar-registro-cliente" method="POST" action="modelo-cliente.php" enctype="multipart/form-data" data-aos="fade">
-              <div class="form-group row justify-content-center">
-                <div class="col-md-3">
-                  <h6 class="">Nombre*</h6>
-                </div>
-                <div class="col-md-9">
-                  <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Neil" required>
-                </div>
-              </div>
+            <form name="guardar-registro-pago" id="guardar-registro-pago" method="POST" action="modelo-pago.php" enctype="multipart/form-data" data-aos="fade">
 
-              <div class="form-group row justify-content-center">
+            <div class="form-group row justify-content-center">
                 <div class="col-md-3">
-                  <h6 class="">Apellidos*</h6>
-                </div>
-                <div class="col-md-9">
-                  <input type="text" class="form-control" name="apellido" id="apellido" placeholder="Armstrong" required>
-                </div>
-              </div>
-
-              <div class="form-group row justify-content-center">
-                <div class="col-md-3">
-                  <h6 class="">Correo Electronico</h6>
-                </div>
-                <div class="col-md-9">
-                  <input type="email" class="form-control" name="email" id="email" placeholder="ejemplo@ejemplo.com">
-                </div>
-              </div>
-
-              <div class="form-group row justify-content-center">
-                <div class="col-md-3">
-                  <h6 class="">Fecha de Nacimiento*</h6>
-                </div>
-                <div class="col-md-9 input-group date" id="fecha" data-target-input="nearest">
-                  <input type="text" name="fecha" id="fecha" class="form-control datetimepicker-input" data-toggle="datetimepicker" placeholder="dd/mm/aa" data-target="#fecha" data-toggle="datetimepicker" required>
-                </div>
-              </div>
-
-              <div class="form-group row justify-content-center">
-                <div class="col-md-3">
-                  <h6 class="">Telefono</h6>
-                </div>
-                <div class="col-md-9">
-                  <input type="text" class="form-control" name="telefono" id="telefono" placeholder="">
-                </div>
-              </div>
-
-              <div class="form-group row justify-content-center">
-                <div class="col-md-3">
-                  <h6 class="">Gimnasio*</h6>
+                  <h6 class="">ID</h6>
                 </div>
                 <div class="col-md-9">
                 <!-- class="seleccionar" es llamadao de app.js -->
                 <select id="" name="gimnasio" class="form-control seleccionar">
-                <option value="0">- Seleccione -</option>
+                <option value="0">- Nombre Apellido -</option>
                   <?php
                     try {
-                      $sql = "SELECT * FROM registro WHERE id_registro = $id ";
+                      $sql = "SELECT * FROM cliente ";
                       $resultado = $conn->query($sql);
-                      while ($gimnasio_registro = $resultado->fetch_assoc()) { ?>
-                        <option value="<?php echo $gimnasio_registro['id_registro']; ?>">
-                        <?php echo $gimnasio_registro['gimnasio_registro']; ?>
+                      while ($cliente = $resultado->fetch_assoc()) { ?>
+                        <option value="<?php echo $cliente['id_cliente']; ?>">
+                        <?php echo $cliente['nombre_cliente'] . " " . $cliente['apellido_cliente']; ?>
                         </option>
                       <?php }
                     } catch (Exception $e) {
@@ -117,15 +72,64 @@ $id = $_SESSION['id'];
 
               <div class="form-group row justify-content-center">
                 <div class="col-md-3">
-                  <h6>Imagen*</h6>
+                  <h6 class="">Nombre</h6>
                 </div>
-                <div class="col-md-9 input-group">
-                  <div class="custom-file">
-                      <input type="file" class="custom-file-input" id="imagen_cliente" name="archivo_imagen">
-                      <label class="custom-file-label" for="imagen_cliente">Elije una imagen</label>
+                <div class="col-md-9">
+                  <input type="text" class="form-control" name="nombre" id="nombre" placeholder="" disabled="">
+                </div>
+              </div>
+
+              <div class="form-group row justify-content-center">
+                <div class="col-md-3">
+                  <h6 class="">Edad</h6>
+                </div>
+                <div class="col-md-9">
+                  <input type="text" class="form-control" name="nombre" id="nombre" placeholder="" disabled="">
+                </div>
+              </div>
+
+              <div class="form-group row justify-content-center">
+                <div class="col-md-3">
+                  <h6 class="">Ultimo Pago</h6>
+                </div>
+                <div class="col-md-9">
+                  <input type="text" class="form-control" name="telefono" id="telefono" placeholder="" disabled="">
+                </div>
+              </div>
+
+              <div class="form-group row justify-content-center">
+                <div class="col-md-3">
+                  <h6 class="">Proximo Pago</h6>
+                </div>
+                <div class="col-md-9">
+                  <input type="text" class="form-control" name="telefono" id="telefono" placeholder="" disabled="">
+                </div>
+              </div>
+
+              <div class="form-group row justify-content-center">
+                <div class="col-md-3">
+                  <h6 class="">Cobertura del Pago*</h6>
+                </div>
+                <div class="col-md-9 input-group date" id="fecha-pago" data-target-input="nearest">
+                  <input type="text" name="fecha-pago" id="fecha-pago" class="form-control datetimepicker-input" data-toggle="datetimepicker" placeholder="dd/mm/aa" data-target="#fecha-pago" data-toggle="datetimepicker" required>
+                </div>
+              </div>
+
+              <div class="form-group row justify-content-center">
+                <div class="col-md-3">
+                  <h6 class="">Pago*</h6>
+                </div>
+                <div class="col-md-9">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">$</span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="100.00">
                   </div>
                 </div>
               </div>
+
+              
 
               <div class="form-group row">
                 <div class="col-md-6 text-secondary">
@@ -137,7 +141,7 @@ $id = $_SESSION['id'];
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
                 <!-- Parametros que se mandan al if del modelo-cliente.php -->
                 <input type="hidden" name="registro" value="nuevo">
-                <input type="submit" class="btn btn-primary" id="" value="Crear Cliente">
+                <input type="submit" class="btn btn-primary" id="" value="Crear Pago">
               </div>
             </form>
           </div>
@@ -147,8 +151,6 @@ $id = $_SESSION['id'];
     </div>
 
 
-
-    <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
         <div class="card">
@@ -157,7 +159,6 @@ $id = $_SESSION['id'];
             <table id="registros-cliente" class="table table-bordered table-striped">
               <thead>
               <tr>
-                <th>Imagen</th>
                 <th>ID</th>
                 <th>Nombre</th>
                 <th>Email</th>
@@ -170,24 +171,24 @@ $id = $_SESSION['id'];
                 <?php
                   try {
                     $sql = "SELECT * ";
-                    $sql .= " FROM cliente ";
-                    $sql .= " INNER JOIN registro ";
-                    $sql .= " ON cliente.gimnasio_cliente=registro.id_registro ";
-                    $sql .= " WHERE gimnasio_cliente = $id ";
-                    $sql .= " ORDER BY id_cliente DESC ";
+                    $sql .= " FROM pago ";
+                    $sql .= " INNER JOIN cliente ";
+                    $sql .= " ON pago.nombre_cliente_pago=cliente.id_cliente ";
+                    $sql .= " ORDER BY id_pago DESC ";
                     $resultado = $conn->query($sql);
                   } catch (Exception $e) {
                     $error = $e->getMessage();
                     echo $error;
                   }
-                  while($cliente = $resultado->fetch_assoc()) { ?>
+                  while($pago = $resultado->fetch_assoc()) { ?>
                     <tr>
-                      <td><img src="../dist/img/clientes/<?php echo $cliente['url_imagen_cliente']; ?>" width="50" alt=""></td>
-                      <td><?php echo $cliente['id_cliente']; ?></td>
-                      <td><?php echo $cliente['nombre_cliente'] . " " . $cliente['apellido_cliente']; ?></td>
-                      <td><?php echo $cliente['email_cliente']; ?></td>
-                      <td><?php echo $cliente['telefono_cliente']; ?></td>
-                      <td><?php echo $cliente['gimnasio_registro']; ?></td>
+                      
+                      <td><?php echo $pago['id_pago']; ?></td>
+                      <td><?php echo $pago['nombre_cliente'] . " " . $pago['apellido_cliente']; ?></td>
+                      <td><?php echo $pago['ultimo_pago']; ?></td>
+                      <td><?php echo $pago['proximo_pago']; ?></td>
+                      <td><?php echo $pago['cobertura_pago']; ?></td>
+                      <td><?php echo $pago['pago']; ?></td>
 
                       <td>
                         <!-- <a title="Ver Todo" href="editar-cliente.php?id=<?php echo $cliente['id_cliente']; ?>" class="btn bg-gradient-primary btn-sm margin">
@@ -207,7 +208,6 @@ $id = $_SESSION['id'];
               </tbody>
               <tfoot>
               <tr>
-                <th>Imagen</th>
                 <th>ID</th>
                 <th>Nombre</th>
                 <th>Email</th>
@@ -224,7 +224,6 @@ $id = $_SESSION['id'];
       </div>
     </section>
     <!-- /.content -->
-
 
 
 

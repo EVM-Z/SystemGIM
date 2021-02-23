@@ -24,16 +24,9 @@
           </li>
           
           <li class="nav-item">
-            <a href="check.php" class="nav-link">
+            <a href="entrada-salida.php" class="nav-link">
               <i class="far fa-calendar-check nav-icon"></i>
-              <p>Check</p>
-            </a>
-          </li>
-
-          <li class="nav-item">
-            <a href="historial.php" class="nav-link">
-              <i class="fas fa-history nav-icon"></i>
-              <p>Historial</p>
+              <p>Entrada/Salida</p>
             </a>
           </li>
 
@@ -44,12 +37,12 @@
             </a>
           </li>
 
-          <!-- <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="fas fa-user nav-icon"></i>
-              <p>Mi Perfil</p>
+          <li class="nav-item">
+            <a href="pago.php" class="nav-link">
+              <i class="fas fa-money-bill-wave"></i>
+              <p>Pagos</p>
             </a>
-          </li> -->
+          </li>
 
           <li class="nav-item">
             <a href="login.php?cerrar_sesion=true" class="nav-link">
