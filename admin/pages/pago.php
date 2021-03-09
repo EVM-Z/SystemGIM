@@ -46,106 +46,96 @@ $id = $_SESSION['id'];
             <form name="guardar-registro-pago" id="guardar-registro-pago" method="POST" action="modelo-pago.php" enctype="multipart/form-data" data-aos="fade">
 
             <div class="form-group row justify-content-center">
-                <div class="col-md-3">
-                  <h6 class="">ID</h6>
-                </div>
-                <div class="col-md-9">
-                <!-- class="seleccionar" es llamadao de app.js -->
-                <select id="" name="gimnasio" class="form-control seleccionar">
-                <option value="0">- Nombre Apellido -</option>
-                  <?php
-                    try {
-                      $sql = "SELECT * FROM cliente ";
-                      $resultado = $conn->query($sql);
-                      while ($cliente = $resultado->fetch_assoc()) { ?>
-                        <option value="<?php echo $cliente['id_cliente']; ?>">
-                        <?php echo $cliente['nombre_cliente'] . " " . $cliente['apellido_cliente']; ?>
-                        </option>
-                      <?php }
-                    } catch (Exception $e) {
-                        echo "Error: " . $e->getMessage();
-                    }
-                  ?>
-                </select>
-                </div>
+              <div class="col-md-3">
+                <h6 class="">ID</h6>
               </div>
-
-              <div class="form-group row justify-content-center">
-                <div class="col-md-3">
-                  <h6 class="">Nombre</h6>
-                </div>
-                <div class="col-md-9">
-                  <input type="text" class="form-control" name="nombre" id="nombre" placeholder="" disabled="">
-                </div>
+              <div class="col-md-9">
+              <!-- class="seleccionar" es llamadao de app.js -->
+              <select id="" name="gimnasio" class="form-control seleccionar">
+              <option value="0">- Nombre Apellido -</option>
+                <?php
+                  try {
+                    $sql = "SELECT * FROM cliente ";
+                    $resultado = $conn->query($sql);
+                    while ($cliente = $resultado->fetch_assoc()) { ?>
+                      <option value="<?php echo $cliente['id_cliente']; ?>">
+                      <?php echo $cliente['nombre_cliente'] . " " . $cliente['apellido_cliente']; ?>
+                      </option>
+                    <?php }
+                  } catch (Exception $e) {
+                      echo "Error: " . $e->getMessage();
+                  }
+                ?>
+              </select>
               </div>
+            </div>
 
-              <div class="form-group row justify-content-center">
-                <div class="col-md-3">
-                  <h6 class="">Edad</h6>
-                </div>
-                <div class="col-md-9">
-                  <input type="text" class="form-control" name="nombre" id="nombre" placeholder="" disabled="">
-                </div>
+            <div class="form-group row justify-content-center">
+              <div class="col-md-3">
+                <h6 class="">Nombre</h6>
               </div>
-
-              <div class="form-group row justify-content-center">
-                <div class="col-md-3">
-                  <h6 class="">Ultimo Pago</h6>
-                </div>
-                <div class="col-md-9">
-                  <input type="text" class="form-control" name="telefono" id="telefono" placeholder="" disabled="">
-                </div>
+              <div class="col-md-9">
+                <input type="text" class="form-control" name="nombre" id="nombre" placeholder="" disabled="">
               </div>
+            </div>
 
-              <div class="form-group row justify-content-center">
-                <div class="col-md-3">
-                  <h6 class="">Proximo Pago</h6>
-                </div>
-                <div class="col-md-9">
-                  <input type="text" class="form-control" name="telefono" id="telefono" placeholder="" disabled="">
-                </div>
+            <div class="form-group row justify-content-center">
+              <div class="col-md-3">
+                <h6 class="">Ultimo Pago</h6>
               </div>
-
-              <div class="form-group row justify-content-center">
-                <div class="col-md-3">
-                  <h6 class="">Cobertura del Pago*</h6>
-                </div>
-                <div class="col-md-9 input-group date" id="fecha-pago" data-target-input="nearest">
-                  <input type="text" name="fecha-pago" id="fecha-pago" class="form-control datetimepicker-input" data-toggle="datetimepicker" placeholder="dd/mm/aa" data-target="#fecha-pago" data-toggle="datetimepicker" required>
-                </div>
+              <div class="col-md-9">
+                <input type="text" class="form-control" name="telefono" id="telefono" placeholder="" disabled="">
               </div>
+            </div>
 
-              <div class="form-group row justify-content-center">
-                <div class="col-md-3">
-                  <h6 class="">Pago*</h6>
-                </div>
-                <div class="col-md-9">
-                  <div class="input-group">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text">$</span>
-                    </div>
-                    <input type="text" class="form-control" placeholder="100.00">
+            <div class="form-group row justify-content-center">
+              <div class="col-md-3">
+                <h6 class="">Proximo Pago</h6>
+              </div>
+              <div class="col-md-9">
+                <input type="text" class="form-control" name="telefono" id="telefono" placeholder="" disabled="">
+              </div>
+            </div>
+
+            <div class="form-group row justify-content-center">
+              <div class="col-md-3">
+                <h6 class="">Cobertura del Pago*</h6>
+              </div>
+              <div class="col-md-9 input-group date" id="fecha-pago" data-target-input="nearest">
+                <input type="text" name="fecha-pago" id="fecha-pago" class="form-control datetimepicker-input" data-toggle="datetimepicker" placeholder="dd/mm/aa" data-target="#fecha-pago" data-toggle="datetimepicker" required>
+              </div>
+            </div>
+
+            <div class="form-group row justify-content-center">
+              <div class="col-md-3">
+                <h6 class="">Pago*</h6>
+              </div>
+              <div class="col-md-9">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">$</span>
                   </div>
+                  <input type="text" class="form-control" placeholder="100.00">
                 </div>
               </div>
+            </div>
 
               
 
-              <div class="form-group row">
-                <div class="col-md-6 text-secondary">
-                  <p>* Campos Obligatorios</p>
-                </div>
+            <div class="form-group row">
+              <div class="col-md-6 text-secondary">
+                <p>* Campos Obligatorios</p>
               </div>
+            </div>
 
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                <!-- Parametros que se mandan al if del modelo-cliente.php -->
-                <input type="hidden" name="registro" value="nuevo">
-                <input type="submit" class="btn btn-primary" id="" value="Crear Pago">
-              </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+              <!-- Parametros que se mandan al if del modelo-cliente.php -->
+              <input type="hidden" name="registro" value="nuevo">
+              <input type="submit" class="btn btn-primary" id="" value="Crear Pago">
+            </div>
             </form>
           </div>
-          
         </div>
       </div>
     </div>
@@ -161,9 +151,11 @@ $id = $_SESSION['id'];
               <tr>
                 <th>ID</th>
                 <th>Nombre</th>
-                <th>Email</th>
-                <th>Telefono</th>
                 <th>Gimnasio</th>
+                <th>Ultimo Pago</th>
+                <th>Proximo Pago</th>
+                <th>Cobertura Pago</th>
+                <th>Pago</th>
                 <th>Acciones</th>
               </tr>
               </thead>
@@ -174,6 +166,7 @@ $id = $_SESSION['id'];
                     $sql .= " FROM pago ";
                     $sql .= " INNER JOIN cliente ";
                     $sql .= " ON pago.nombre_cliente_pago=cliente.id_cliente ";
+                    $sql .= " WHERE gimnasio_cliente = $id ";
                     $sql .= " ORDER BY id_pago DESC ";
                     $resultado = $conn->query($sql);
                   } catch (Exception $e) {
@@ -185,6 +178,7 @@ $id = $_SESSION['id'];
                       
                       <td><?php echo $pago['id_pago']; ?></td>
                       <td><?php echo $pago['nombre_cliente'] . " " . $pago['apellido_cliente']; ?></td>
+                      <td><?php echo $pago['gimnasio_cliente']; ?></td>
                       <td><?php echo $pago['ultimo_pago']; ?></td>
                       <td><?php echo $pago['proximo_pago']; ?></td>
                       <td><?php echo $pago['cobertura_pago']; ?></td>
@@ -210,9 +204,11 @@ $id = $_SESSION['id'];
               <tr>
                 <th>ID</th>
                 <th>Nombre</th>
-                <th>Email</th>
-                <th>Telefono</th>
                 <th>Gimnasio</th>
+                <th>Ultimo Pago</th>
+                <th>Proximo Pago</th>
+                <th>Cobertura Pago</th>
+                <th>Pago</th>
                 <th>Acciones</th>
               </tr>
               </tfoot>
