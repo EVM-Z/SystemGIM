@@ -169,6 +169,7 @@ $id = $_SESSION['id'];
               <tbody>
                 <?php
                   try {
+                    /* Para visualizar mejor el codigo, usar Workbench */
                     $sql = "SELECT * ";
                     $sql .= " FROM cliente ";
                     $sql .= " INNER JOIN registro ";

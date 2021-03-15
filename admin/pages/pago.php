@@ -162,6 +162,7 @@ $id = $_SESSION['id'];
               <tbody>
                 <?php
                   try {
+                    /* Para visualizar mejor el codigo, usar Workbench */
                     $sql = "SELECT * ";
                     $sql .= " FROM pago ";
                     $sql .= " INNER JOIN cliente ";

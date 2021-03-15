@@ -25,7 +25,7 @@ $(function(){
 
     // Tabla de check.php
     $("#registros-entrada-salida").DataTable({
-        "pageLength": 5,
+        "pageLength": 10,
         "paging": true,
         "lengthChange": false,
         "searching": true,

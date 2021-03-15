@@ -72,22 +72,47 @@ $id = $_SESSION['id'];
             <table id="registros-entrada-salida" class="table table-bordered table-striped">
               <thead>
               <tr>
-                <th>ID</th>
                 <th>Fecha</th>
                 <th>ID Cliente</th>
                 <th>Nombre</th>
                 <th>Gimnasio</th>
+                <th>Ultimo Pago</th>
+                <th>Proximo Pago</th>
+                <th>Cobertura Pago</th>
+                <th>Pago</th>
               </tr>
               </thead>
               <tbody>
                 <?php
                 try {
-                  $sql = "SELECT * ";
-                  $sql .= " FROM entrada_salida ";
-                  $sql .= " INNER JOIN cliente ";
-                  $sql .= " ON entrada_salida.cliente_entrada_salida=cliente.id_cliente ";
-                  $sql .= " WHERE gimnasio_cliente = $id ";
-                  $sql .= " ORDER BY id_entrada_salida ";
+                  /* Para visualizar mejor el codigo, usar Workbench */
+                  $sql = "SELECT ";
+                  $sql .= " es.id_entrada_salida AS 'id_entrada_salida', ";
+                  $sql .= " es.fecha_entrada_salida AS 'f_entrada_salida', ";
+                  $sql .= " es.e_s AS 'h_entrada_salida', ";
+
+                  $sql .= " c.id_cliente AS 'id_cliente', ";
+                  $sql .= " c.nombre_cliente AS 'nombre_cliente', ";
+                  $sql .= " c.apellido_cliente AS 'apellido_cliente', ";
+                  $sql .= " c.gimnasio_cliente AS 'gimnasio_cliente', ";
+
+                  $sql .= " IFNULL(p.id_pago, 'Sin datos') AS 'id_pago', ";
+                  $sql .= " IFNULL(p.nombre_cliente_pago, 'Sin datos') AS 'id_cliente_en_el_pago', ";
+                  $sql .= " IFNULL(p.ultimo_pago, 'Sin datos') AS 'ultimo_pago', ";
+                  $sql .= " IFNULL(p.proximo_pago, 'Sin datos') AS 'proximo_pago', ";
+
+                  $sql .= " IFNULL(p.cobertura_pago, 'Sin datos') AS 'cobertura_pago', ";
+                  $sql .= " IFNULL(p.pago, 'Sin datos') AS 'pago' ";
+                  
+                  $sql .= " FROM entrada_salida es ";
+                  $sql .= " LEFT JOIN cliente c ";
+                  $sql .= " ON es.cliente_entrada_salida = c.id_cliente ";
+                  $sql .= " LEFT JOIN pago p ";
+                  $sql .= " ON c.id_cliente = p.nombre_cliente_pago ";
+
+                  $sql .= " WHERE c.gimnasio_cliente = $id ";
+                  $sql .= " ORDER BY es.id_entrada_salida DESC ";
+
                   $resultado = $conn->query($sql);
                 } catch (Exception $e) {
                   $error = $e->getMessage();
@@ -96,31 +121,29 @@ $id = $_SESSION['id'];
                 
                 while($entrada_salida = $resultado->fetch_assoc()) { ?>
 
-                  <?php
-                  // Accedemos al valor de la tabla
-                  $fecha = $entrada_salida['fecha_entrada_salida'];
-                  // Reemplaza los caracteres
-                  $fecha = str_replace('-', '/', $fecha);
-                  // Cambiamos la fecha de la BD a formato local
-                  $fecha_formateada = date('d-m-Y', strtotime($fecha));
-                  ?>
-
                   <tr>
-                    <td><?php echo $entrada_salida['id_entrada_salida']; ?></td>
-                    <td><?php echo $fecha_formateada . " / " . $entrada_salida['e_s']; ?></td>
+                    <td><?php echo $entrada_salida['f_entrada_salida'] . ' / ' . $entrada_salida['h_entrada_salida']; ?></td>
                     <td><?php echo $entrada_salida['id_cliente']; ?></td>
-                    <td><?php echo $entrada_salida['nombre_cliente'] . " " . $entrada_salida['apellido_cliente']; ?></td>
+                    <td><?php echo $entrada_salida['nombre_cliente'] . ' ' . $entrada_salida['apellido_cliente']; ?></td>
+                    
                     <td><?php echo $entrada_salida['gimnasio_cliente']; ?></td>
+                    <td><?php echo $entrada_salida['ultimo_pago']; ?></td>
+                    <td><?php echo $entrada_salida['proximo_pago']; ?></td>
+                    <td><?php echo $entrada_salida['cobertura_pago']; ?></td>
+                    <td><?php echo $entrada_salida['pago']; ?></td>
                   </tr>
                 <?php } ?>
               </tbody>
               <tfoot>
               <tr>
-                <th>ID</th>
                 <th>Fecha</th>
                 <th>ID Cliente</th>
                 <th>Nombre</th>
                 <th>Gimnasio</th>
+                <th>Ultimo Pago</th>
+                <th>Proximo Pago</th>
+                <th>Cobertura Pago</th>
+                <th>Pago</th>
               </tr>
               </tfoot>
             </table>
