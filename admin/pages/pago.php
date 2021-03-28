@@ -52,14 +52,19 @@ $id = $_SESSION['id'];
               <div class="col-md-9">
               <!-- class="seleccionar" es llamadao de app.js -->
               <select id="" name="gimnasio" class="form-control seleccionar">
-              <option value="0">- Nombre Apellido -</option>
+              <option value="0">- ID -</option>
                 <?php
                   try {
-                    $sql = "SELECT * FROM cliente ";
+                    $sql = "SELECT * ";
+                    $sql .= " FROM pago ";
+                    $sql .= " INNER JOIN cliente ";
+                    $sql .= " ON pago.nombre_cliente_pago=cliente.id_cliente ";
+                    $sql .= " WHERE gimnasio_cliente = $id ";
+                    $sql .= " ORDER BY id_pago DESC ";
                     $resultado = $conn->query($sql);
-                    while ($cliente = $resultado->fetch_assoc()) { ?>
-                      <option value="<?php echo $cliente['id_cliente']; ?>">
-                      <?php echo $cliente['nombre_cliente'] . " " . $cliente['apellido_cliente']; ?>
+                    while ($pago = $resultado->fetch_assoc()) { ?>
+                      <option value="<?php echo $pago['id_pago']; ?>">
+                      <?php echo $pago['nombre_cliente_pago']; ?>
                       </option>
                     <?php }
                   } catch (Exception $e) {
@@ -163,12 +168,29 @@ $id = $_SESSION['id'];
                 <?php
                   try {
                     /* Para visualizar mejor el codigo, usar Workbench */
-                    $sql = "SELECT * ";
-                    $sql .= " FROM pago ";
-                    $sql .= " INNER JOIN cliente ";
-                    $sql .= " ON pago.nombre_cliente_pago=cliente.id_cliente ";
-                    $sql .= " WHERE gimnasio_cliente = $id ";
-                    $sql .= " ORDER BY id_pago DESC ";
+                    $sql = "SELECT";
+                    $sql .= " p.id_pago AS 'id_pago', ";
+                    $sql .= " p.nombre_cliente_pago AS 'nombre_cliente', ";
+                    $sql .= " IFNULL(p.ultimo_pago, 'Sin datos') AS 'ultimo_pago', ";
+                    $sql .= " IFNULL(p.proximo_pago, 'Sin datos') AS 'proximo_pago', ";
+                    $sql .= " IFNULL(p.cobertura_pago, 'Sin datos') AS 'cobertura_pago', ";
+                    $sql .= " IFNULL(p.pago, 'Sin datos') AS 'pago', ";
+
+                    $sql .= " c.id_cliente, ";
+                    $sql .= " c.nombre_cliente, ";
+                    $sql .= " c.apellido_cliente, ";
+                    $sql .= " c.email_cliente, ";
+                    $sql .= " c.fecha_nacimiento_cliente, ";
+                    $sql .= " c.telefono_cliente, ";
+                    $sql .= " c.gimnasio_cliente, ";
+                    $sql .= " c.url_imagen_cliente ";
+
+                    $sql .= " FROM pago p ";
+                    $sql .= " LEFT JOIN cliente c ";
+                    $sql .= " ON p.nombre_cliente_pago=c.id_cliente ";
+                    $sql .= " WHERE c.gimnasio_cliente = $id ";
+                    $sql .= " ORDER BY id_pago DESC; ";
+                    
                     $resultado = $conn->query($sql);
                   } catch (Exception $e) {
                     $error = $e->getMessage();
