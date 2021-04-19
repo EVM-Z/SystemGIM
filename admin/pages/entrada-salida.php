@@ -46,20 +46,6 @@ $id = $_SESSION['id'];
     <!-- /.content-header -->
 
 
-
-    <?php
-      $sql = "SELECT * FROM cliente WHERE id_cliente = 21 ";
-      $resultado = $conn->query($sql);
-      $cliente = $resultado->fetch_assoc();
-      /*
-      echo "<pre>";
-      var_dump($cliente);
-      echo "</pre>";
-      */
-    ?>
-
-
-
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
@@ -72,14 +58,13 @@ $id = $_SESSION['id'];
             <table id="registros-entrada-salida" class="table table-bordered table-striped">
               <thead>
               <tr>
+                <th>ID</th>
                 <th>Fecha</th>
                 <th>ID Cliente</th>
                 <th>Nombre</th>
                 <th>Gimnasio</th>
-                <th>Ultimo Pago</th>
-                <th>Proximo Pago</th>
-                <th>Cobertura Pago</th>
                 <th>Pago</th>
+                <th>Fecha Pago</th>
               </tr>
               </thead>
               <tbody>
@@ -98,11 +83,9 @@ $id = $_SESSION['id'];
 
                   $sql .= " IFNULL(p.id_pago, 'Sin datos') AS 'id_pago', ";
                   $sql .= " IFNULL(p.nombre_cliente_pago, 'Sin datos') AS 'id_cliente_en_el_pago', ";
-                  $sql .= " IFNULL(p.ultimo_pago, 'Sin datos') AS 'ultimo_pago', ";
-                  $sql .= " IFNULL(p.proximo_pago, 'Sin datos') AS 'proximo_pago', ";
-
                   $sql .= " IFNULL(p.cobertura_pago, 'Sin datos') AS 'cobertura_pago', ";
-                  $sql .= " IFNULL(p.pago, 'Sin datos') AS 'pago' ";
+                  $sql .= " IFNULL(p.pago, 'Sin datos') AS 'pago', ";
+                  $sql .= " IFNULL(p.fecha_creacion_pago, 'Sin datos') AS 'fecha_pago' ";
                   
                   $sql .= " FROM entrada_salida es ";
                   $sql .= " LEFT JOIN cliente c ";
@@ -122,28 +105,27 @@ $id = $_SESSION['id'];
                 while($entrada_salida = $resultado->fetch_assoc()) { ?>
 
                   <tr>
+                    <th><?php echo $entrada_salida['id_entrada_salida']; ?></th>
                     <td><?php echo $entrada_salida['f_entrada_salida'] . ' / ' . $entrada_salida['h_entrada_salida']; ?></td>
                     <td><?php echo $entrada_salida['id_cliente']; ?></td>
                     <td><?php echo $entrada_salida['nombre_cliente'] . ' ' . $entrada_salida['apellido_cliente']; ?></td>
                     
                     <td><?php echo $entrada_salida['gimnasio_cliente']; ?></td>
-                    <td><?php echo $entrada_salida['ultimo_pago']; ?></td>
-                    <td><?php echo $entrada_salida['proximo_pago']; ?></td>
-                    <td><?php echo $entrada_salida['cobertura_pago']; ?></td>
+
                     <td><?php echo $entrada_salida['pago']; ?></td>
+                    <td><?php echo $entrada_salida['fecha_pago']; ?></td>
                   </tr>
                 <?php } ?>
               </tbody>
               <tfoot>
               <tr>
+                <th>ID</th>
                 <th>Fecha</th>
                 <th>ID Cliente</th>
                 <th>Nombre</th>
                 <th>Gimnasio</th>
-                <th>Ultimo Pago</th>
-                <th>Proximo Pago</th>
-                <th>Cobertura Pago</th>
                 <th>Pago</th>
+                <th>Fecha Pago</th>
               </tr>
               </tfoot>
             </table>

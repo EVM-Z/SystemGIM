@@ -77,6 +77,7 @@ $id = $_SESSION['id'];
                   <h6 class="">Fecha de Nacimiento*</h6>
                 </div>
                 <div class="col-md-9 input-group date" id="fecha" data-target-input="nearest">
+                  <!-- data-target es informacion que se manda a app.js -->
                   <input type="text" name="fecha" id="fecha" class="form-control datetimepicker-input" data-toggle="datetimepicker" placeholder="dd/mm/aa" data-target="#fecha" data-toggle="datetimepicker" required>
                 </div>
               </div>
@@ -157,8 +158,8 @@ $id = $_SESSION['id'];
             <table id="registros-cliente" class="table table-bordered table-striped">
               <thead>
               <tr>
-                <th>Imagen</th>
                 <th>ID</th>
+                <th>Imagen</th>
                 <th>Nombre</th>
                 <th>Email</th>
                 <th>Telefono</th>
@@ -183,8 +184,8 @@ $id = $_SESSION['id'];
                   }
                   while($cliente = $resultado->fetch_assoc()) { ?>
                     <tr>
-                      <td><img src="../dist/img/clientes/<?php echo $cliente['url_imagen_cliente']; ?>" width="50" alt=""></td>
                       <td><?php echo $cliente['id_cliente']; ?></td>
+                      <td><img src="../dist/img/clientes/<?php echo $cliente['url_imagen_cliente']; ?>" width="50" alt=""></td>
                       <td><?php echo $cliente['nombre_cliente'] . " " . $cliente['apellido_cliente']; ?></td>
                       <td><?php echo $cliente['email_cliente']; ?></td>
                       <td><?php echo $cliente['telefono_cliente']; ?></td>
@@ -208,8 +209,8 @@ $id = $_SESSION['id'];
               </tbody>
               <tfoot>
               <tr>
-                <th>Imagen</th>
                 <th>ID</th>
+                <th>Imagen</th>
                 <th>Nombre</th>
                 <th>Email</th>
                 <th>Telefono</th>

@@ -78,7 +78,7 @@ $(document).ready(function() {
         });
     });
 
-    // Se ejecuta dentro del AdminLTE
+    // Se ejecuta en entrada-salida.php
     $('#guardar-registro-entrada-salida').on('submit', function(e) {
         // Evitamos que se habran los modelos.php desde el formulario
         e.preventDefault();
@@ -102,6 +102,44 @@ $(document).ready(function() {
                     Swal.fire(
                         'OK',
                         'Registro guardado',
+                        'success'
+                    )
+                } else {
+                    Swal.fire(
+                        'Error',
+                        'Vuelva a ingresar sus datos',
+                        'error'
+                    )
+                }
+                
+            }
+        });
+    });
+
+    // Se ejecuta en pago.php
+    $('#guardar-registro-pago').on('submit', function(e) {
+        // Evitamos que se habran los modelos.php desde el formulario
+        e.preventDefault();
+        // Obtener los datos
+        // serializeArray() justa todos los datos en un arreglo
+        var datos = $(this).serializeArray();
+        $.ajax({
+            // Lee el method="POST"
+            type: $(this).attr('method'),
+            data: datos,
+            // La URL del formulario action="modelo-nuevo.php"
+            url: $(this).attr('action'),
+            dataType: 'json',
+            success: function(data) {
+                console.log(data);
+                var resultado = data;
+                if (resultado.respuesta == 'exito') {
+                    // Limpia el formulario
+                    $('#guardar-registro-pago')[0].reset();
+                    // Mensaje en popup
+                    Swal.fire(
+                        'OK',
+                        'Pago guardado',
                         'success'
                     )
                 } else {

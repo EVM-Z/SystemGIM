@@ -39,7 +39,7 @@ if ($_POST['registro']  == 'nuevo') {
 
     try {  
         // php statement
-        $stmt = $conn->prepare("INSERT INTO cliente (nombre_cliente, apellido_cliente, email_cliente, fecha_nacimiento_cliente, telefono_cliente, gimnasio_cliente, url_imagen_cliente) VALUES (?, ?, ?, ?, ?, ?, ?) ");
+        $stmt = $conn->prepare("INSERT INTO cliente (nombre_cliente, apellido_cliente, email_cliente, fecha_nacimiento_cliente, telefono_cliente, gimnasio_cliente, url_imagen_cliente, fecha_creacion_cliente) VALUES (?, ?, ?, ?, ?, ?, ?, CURDATE()) ");
         $stmt->bind_param("sssssis", $nombre, $apellido, $email, $fecha_formateada, $telefono, $gimnasio, $imagen_url);
         $stmt->execute();
         // insert_id es un valor de $stmt
