@@ -127,7 +127,7 @@ $(document).ready(function() {
             // Lee el method="POST"
             type: $(this).attr('method'),
             data: datos,
-            // La URL del formulario action="modelo-nuevo.php"
+            // La URL del formulario action="modelo-pago.php"
             url: $(this).attr('action'),
             dataType: 'json',
             success: function(data) {

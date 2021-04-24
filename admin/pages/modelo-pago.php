@@ -3,16 +3,19 @@ error_reporting(E_ALL ^ E_NOTICE);
 include 'funciones/funciones.php';
 
 // Comprobación de existencia y declaración de variables
-$id_cliente = $_POST['id_cliente'];
+$nombre_cliente_pago = $_POST['nombre_cliente_pago'];
 $cobertura_pago = $_POST['cobertura_pago'];
+// Reemplaza los caracteres
+$cobertura_pago = str_replace('/', '-', $cobertura_pago);
+// Cambiamos la fecha al formato de la BD
+$fecha_formateada = date('Y-m-d', strtotime($cobertura_pago));
 $pago = $_POST['pago'];
 
-if ($_POST['registro'] == 'pago') { 
-
+if ($_POST['registro'] == 'nuevo') {
     try {
         // php statement
-        $stmt = $conn->prepare("INSERT INTO pago (nombre_cliente_pago, fecha_entrada_salida, e_s) VALUES (?, CURDATE(), curTime()) ");
-        $stmt->bind_param("i", $id_entrada_salida);
+        $stmt = $conn->prepare("INSERT INTO pago (nombre_cliente_pago, cobertura_pago, pago, fecha_creacion_pago) VALUES (?, ?, ?, CURDATE()) ");
+        $stmt->bind_param("iss", $nombre_cliente_pago, $fecha_formateada, $pago);
         $stmt->execute();
         // insert_id es un valor de $stmt
         $id_registro = $stmt->insert_id;

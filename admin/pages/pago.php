@@ -51,33 +51,19 @@ $id = $_SESSION['id'];
               </div>
               <div class="col-md-9">
               <!-- class="seleccionar" es llamado de app.js -->
-              <select id="" name="gimnasio" class="form-control seleccionar">
+              
+              
+              <select id="nombre_cliente_pago" name="nombre_cliente_pago" class="form-control seleccionar">
               <option value="0">- Nombre y Apellido -</option>
                 <?php
                   try {
                     /* Para visualizar mejor el codigo, usar Workbench */
-                    $sql = "SELECT";
-                    $sql .= " p.id_pago AS 'id_pago', ";
-                    $sql .= " p.nombre_cliente_pago AS 'nombre_cliente', ";
-                    $sql .= " IFNULL(p.ultimo_pago, 'Sin datos') AS 'ultimo_pago', ";
-                    $sql .= " IFNULL(p.proximo_pago, 'Sin datos') AS 'proximo_pago', ";
-                    $sql .= " IFNULL(p.cobertura_pago, 'Sin datos') AS 'cobertura_pago', ";
-                    $sql .= " IFNULL(p.pago, 'Sin datos') AS 'pago', ";
-
-                    $sql .= " c.id_cliente, ";
-                    $sql .= " c.nombre_cliente, ";
-                    $sql .= " c.apellido_cliente, ";
-                    $sql .= " c.email_cliente, ";
-                    $sql .= " c.fecha_nacimiento_cliente, ";
-                    $sql .= " c.telefono_cliente, ";
-                    $sql .= " c.gimnasio_cliente, ";
-                    $sql .= " c.url_imagen_cliente ";
-
-                    $sql .= " FROM pago p ";
-                    $sql .= " LEFT JOIN cliente c ";
-                    $sql .= " ON p.nombre_cliente_pago=c.id_cliente ";
-                    $sql .= " WHERE c.gimnasio_cliente = $id ";
-                    $sql .= " ORDER BY id_pago DESC; ";
+                    $sql = "SELECT * ";
+                    $sql .= " FROM cliente ";
+                    $sql .= " INNER JOIN registro ";
+                    $sql .= "ON cliente.gimnasio_cliente=registro.id_registro ";
+                    $sql .= "WHERE gimnasio_cliente = $id ";
+                    $sql .= "ORDER BY id_cliente DESC ";
                     
                     $resultado = $conn->query($sql);
 
@@ -91,6 +77,9 @@ $id = $_SESSION['id'];
                   }
                 ?>
               </select>
+
+
+                
               </div>
             </div>
 
@@ -126,8 +115,8 @@ $id = $_SESSION['id'];
 
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-              <!-- Parametros que se mandan al if del modelo-cliente.php -->
-              <input type="hidden" name="registro" value="pago">
+              <!-- Parametros que se mandan al if del modelo-pago.php -->
+              <input type="hidden" name="registro" value="nuevo">
               <input type="submit" class="btn btn-primary" id="" value="Crear Pago">
             </div>
             </form>
@@ -149,6 +138,7 @@ $id = $_SESSION['id'];
                 <th>ID</th>
                 <th>Nombre</th>
                 <th>Gimnasio</th>
+                <th>Cobertura de Pago</th>
                 <th>Pago</th>
                 <th>Fecha Pago</th>
                 <th>Acciones</th>
@@ -192,6 +182,7 @@ $id = $_SESSION['id'];
                       <td><?php echo $pago['id_pago']; ?></td>
                       <td><?php echo $pago['nombre_cliente'] . " " . $pago['apellido_cliente']; ?></td>
                       <td><?php echo $pago['gimnasio_cliente']; ?></td>
+                      <td><?php echo $pago['cobertura_pago']; ?></td>
                       <td><?php echo $pago['pago']; ?></td>
                       <td><?php echo $pago['fecha_pago']; ?></td>
 
@@ -216,6 +207,7 @@ $id = $_SESSION['id'];
                 <th>ID</th>
                 <th>Nombre</th>
                 <th>Gimnasio</th>
+                <th>Cobertura de Pago</th>
                 <th>Pago</th>
                 <th>Fecha Pago</th>
                 <th>Acciones</th>
