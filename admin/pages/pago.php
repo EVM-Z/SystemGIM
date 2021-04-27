@@ -47,7 +47,7 @@ $id = $_SESSION['id'];
 
             <div class="form-group row justify-content-center">
               <div class="col-md-3">
-                <h6 class="">ID</h6>
+                <h6 class="">Nombre Completo</h6>
               </div>
               <div class="col-md-9">
               <!-- class="seleccionar" es llamado de app.js -->
@@ -61,9 +61,9 @@ $id = $_SESSION['id'];
                     $sql = "SELECT * ";
                     $sql .= " FROM cliente ";
                     $sql .= " INNER JOIN registro ";
-                    $sql .= "ON cliente.gimnasio_cliente=registro.id_registro ";
-                    $sql .= "WHERE gimnasio_cliente = $id ";
-                    $sql .= "ORDER BY id_cliente DESC ";
+                    $sql .= " ON cliente.gimnasio_cliente=registro.id_registro ";
+                    $sql .= " WHERE gimnasio_cliente = $id ";
+                    $sql .= " ORDER BY id_cliente DESC ";
                     
                     $resultado = $conn->query($sql);
 
@@ -140,7 +140,7 @@ $id = $_SESSION['id'];
                 <th>Gimnasio</th>
                 <th>Cobertura de Pago</th>
                 <th>Pago</th>
-                <th>Fecha Pago</th>
+                <th>Fecha del Pago</th>
                 <th>Acciones</th>
               </tr>
               </thead>
@@ -187,14 +187,14 @@ $id = $_SESSION['id'];
                       <td><?php echo $pago['fecha_pago']; ?></td>
 
                       <td>
-                        <!-- <a title="Ver Todo" href="editar-cliente.php?id=<?php echo $cliente['id_cliente']; ?>" class="btn bg-gradient-primary btn-sm margin">
+                        <!-- <a title="Ver Todo" href="editar-cliente.php?id=<?php echo $pago['id_pago']; ?>" class="btn bg-gradient-primary btn-sm margin">
                         <i class="fas fa-list-alt"></i>
                         </a> -->
-                        <a title="Editar" href="editar-cliente.php?id=<?php echo $cliente['id_cliente']; ?>" class="btn bg-gradient-warning btn-sm margin">
+                        <a title="Editar" href="editar-pago.php?id=<?php echo $pago['id_pago']; ?>" class="btn bg-gradient-warning btn-sm margin">
                         <i class="fas fa-pencil-alt"></i>
                         </a>
                         <!-- Se manda al admin-ajax.js -->
-                        <a title="Eliminar" href="#" data-id="<?php echo $cliente['id_cliente']; ?>" data-tipo="cliente" class="btn bg-gradient-danger btn-sm borrar_registro">
+                        <a title="Eliminar" href="#" data-id="<?php echo $pago['id_pago']; ?>" data-tipo="cliente" class="btn bg-gradient-danger btn-sm borrar_registro">
                         <i class="fas fa-trash-alt"></i>
                         </a>
                       </td>
@@ -209,7 +209,7 @@ $id = $_SESSION['id'];
                 <th>Gimnasio</th>
                 <th>Cobertura de Pago</th>
                 <th>Pago</th>
-                <th>Fecha Pago</th>
+                <th>Fecha del Pago</th>
                 <th>Acciones</th>
               </tr>
               </tfoot>
