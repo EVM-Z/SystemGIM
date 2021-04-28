@@ -194,7 +194,7 @@ $id = $_SESSION['id'];
                         <i class="fas fa-pencil-alt"></i>
                         </a>
                         <!-- Se manda al admin-ajax.js -->
-                        <a title="Eliminar" href="#" data-id="<?php echo $pago['id_pago']; ?>" data-tipo="cliente" class="btn bg-gradient-danger btn-sm borrar_registro">
+                        <a title="Eliminar" href="#" data-id="<?php echo $pago['id_pago']; ?>" data-tipo="pago" class="btn bg-gradient-danger btn-sm borrar_registro">
                         <i class="fas fa-trash-alt"></i>
                         </a>
                       </td>
