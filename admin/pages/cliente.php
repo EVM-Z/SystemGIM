@@ -163,7 +163,6 @@ $id = $_SESSION['id'];
                 <th>Nombre</th>
                 <th>Email</th>
                 <th>Telefono</th>
-                <th>Gimnasio</th>
                 <th>Acciones</th>
               </tr>
               </thead>
@@ -189,7 +188,6 @@ $id = $_SESSION['id'];
                       <td><?php echo $cliente['nombre_cliente'] . " " . $cliente['apellido_cliente']; ?></td>
                       <td><?php echo $cliente['email_cliente']; ?></td>
                       <td><?php echo $cliente['telefono_cliente']; ?></td>
-                      <td><?php echo $cliente['gimnasio_registro']; ?></td>
 
                       <td>
                         <!-- <a title="Ver Todo" href="editar-cliente.php?id=<?php echo $cliente['id_cliente']; ?>" class="btn bg-gradient-primary btn-sm margin">
@@ -214,7 +212,6 @@ $id = $_SESSION['id'];
                 <th>Nombre</th>
                 <th>Email</th>
                 <th>Telefono</th>
-                <th>Gimnasio</th>
                 <th>Acciones</th>
               </tr>
               </tfoot>
