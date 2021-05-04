@@ -11,6 +11,10 @@ include 'funciones/funciones.php';
 include 'templates/header.php';
 include 'templates/barra-superior.php';
 include 'templates/barra-lateral.php';
+
+// Obtenemos el id de la sesion
+$id_sesion = $_SESSION['id'];
+
 ?>
 
 
@@ -66,7 +70,17 @@ include 'templates/barra-lateral.php';
                               try {
                                 
                                 $cliente_actual = $pago['nombre_cliente_pago'];
-                                $sql = "SELECT * FROM cliente ";
+
+                                /* Para visualizar mejor el codigo, usar Workbench */
+                                $sql = "SELECT * ";
+                                $sql .= " FROM cliente ";
+                                $sql .= " INNER JOIN registro ";
+                                $sql .= " ON cliente.gimnasio_cliente=registro.id_registro ";
+                                $sql .= " WHERE gimnasio_cliente = $id_sesion ";
+                                $sql .= " ORDER BY id_cliente DESC ";
+
+                                // $sql = "SELECT * FROM cliente ";
+
                                 $resultado = $conn->query($sql);
                                 while($tabla_cliente = $resultado->fetch_assoc()){
 
