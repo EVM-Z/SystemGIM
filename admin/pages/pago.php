@@ -137,7 +137,6 @@ $id = $_SESSION['id'];
               <tr>
                 <th>ID</th>
                 <th>Nombre</th>
-                <th>Gimnasio</th>
                 <th>Cobertura de Pago</th>
                 <th>Pago</th>
                 <th>Fecha del Pago</th>
@@ -181,7 +180,6 @@ $id = $_SESSION['id'];
                       
                       <td><?php echo $pago['id_pago']; ?></td>
                       <td><?php echo $pago['nombre_cliente'] . " " . $pago['apellido_cliente']; ?></td>
-                      <td><?php echo $pago['gimnasio_cliente']; ?></td>
                       <td><?php echo $pago['cobertura_pago']; ?></td>
                       <td><?php echo $pago['pago']; ?></td>
                       <td><?php echo $pago['fecha_pago']; ?></td>
@@ -206,7 +204,6 @@ $id = $_SESSION['id'];
               <tr>
                 <th>ID</th>
                 <th>Nombre</th>
-                <th>Gimnasio</th>
                 <th>Cobertura de Pago</th>
                 <th>Pago</th>
                 <th>Fecha del Pago</th>
