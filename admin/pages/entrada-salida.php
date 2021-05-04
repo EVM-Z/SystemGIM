@@ -60,11 +60,8 @@ $id = $_SESSION['id'];
               <tr>
                 <th>ID</th>
                 <th>Fecha</th>
-                <th>ID Cliente</th>
-                <th>Nombre</th>
-                <th>Gimnasio</th>
-                <th>Pago</th>
-                <th>Fecha Pago</th>
+                <th>Nombre Completo</th>
+                <th>Cobertura de Pago</th>
               </tr>
               </thead>
               <tbody>
@@ -107,13 +104,8 @@ $id = $_SESSION['id'];
                   <tr>
                     <th><?php echo $entrada_salida['id_entrada_salida']; ?></th>
                     <td><?php echo $entrada_salida['f_entrada_salida'] . ' / ' . $entrada_salida['h_entrada_salida']; ?></td>
-                    <td><?php echo $entrada_salida['id_cliente']; ?></td>
                     <td><?php echo $entrada_salida['nombre_cliente'] . ' ' . $entrada_salida['apellido_cliente']; ?></td>
-                    
-                    <td><?php echo $entrada_salida['gimnasio_cliente']; ?></td>
-
-                    <td><?php echo $entrada_salida['pago']; ?></td>
-                    <td><?php echo $entrada_salida['fecha_pago']; ?></td>
+                    <td><?php echo $entrada_salida['cobertura_pago']; ?></td>
                   </tr>
                 <?php } ?>
               </tbody>
@@ -121,11 +113,8 @@ $id = $_SESSION['id'];
               <tr>
                 <th>ID</th>
                 <th>Fecha</th>
-                <th>ID Cliente</th>
-                <th>Nombre</th>
-                <th>Gimnasio</th>
-                <th>Pago</th>
-                <th>Fecha Pago</th>
+                <th>Nombre Completo</th>
+                <th>Cobertura de Pago</th>
               </tr>
               </tfoot>
             </table>
