@@ -45,6 +45,13 @@
           </li>
 
           <li class="nav-item">
+            <a href="editar-perfil.php" class="nav-link">
+              <i class="fas fa-user"></i>
+              <p>Mi perfil</p>
+            </a>
+          </li>
+
+          <li class="nav-item">
             <a href="login.php?cerrar_sesion=true" class="nav-link">
               <i class="fas fa-sign-out-alt nav-icon"></i>
                 <p>Salir</p>
