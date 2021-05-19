@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 19-04-2021 a las 05:12:33
+-- Tiempo de generación: 19-05-2021 a las 04:44:23
 -- Versión del servidor: 10.4.17-MariaDB
 -- Versión de PHP: 8.0.0
 
@@ -45,7 +45,7 @@ CREATE TABLE `cliente` (
 
 INSERT INTO `cliente` (`id_cliente`, `nombre_cliente`, `apellido_cliente`, `email_cliente`, `fecha_nacimiento_cliente`, `telefono_cliente`, `gimnasio_cliente`, `url_imagen_cliente`, `fecha_creacion_cliente`) VALUES
 (20, 'Eliseo', 'VM', 'eliseo-01@gmail.com', '2021-12-31', '9981505702', 65, '127162643_10159108904568217_5842463868241141841_n.jpg', NULL),
-(21, 'Juan', 'VM', 'eliseo-01@gmail.com', '2020-11-14', '9981505702', 64, '122678745_2762713470669451_2203428614279550983_o.jpg', NULL),
+(21, 'Juana', 'VM', 'eliseo-01@gmail.com', '2020-11-14', '9981505702', 64, '122678745_2762713470669451_2203428614279550983_o.jpg', NULL),
 (22, 'Pepe', 'VM', 'eliseo-01@gmail.com', '2020-11-10', '9981505702', 72, 'Sin título111.png', NULL),
 (23, 'Alex', 'VM', 'eliseo-01@gmail.com', '2020-11-03', '9981505702', 66, 'Sin título111.png', NULL),
 (26, 'Carlos', 'VM', 'eliseo-01@gmail.com', '2020-11-10', '9981505702', 66, '122678745_2762713470669451_2203428614279550983_o.jpg', NULL),
@@ -160,8 +160,6 @@ CREATE TABLE `pago` (
 
 INSERT INTO `pago` (`id_pago`, `nombre_cliente_pago`, `cobertura_pago`, `pago`, `fecha_creacion_pago`) VALUES
 (1, 20, NULL, NULL, NULL),
-(2, 21, NULL, NULL, NULL),
-(3, 22, NULL, NULL, NULL),
 (4, 23, NULL, NULL, NULL),
 (5, 26, NULL, NULL, NULL),
 (6, 27, NULL, NULL, NULL),
@@ -172,10 +170,9 @@ INSERT INTO `pago` (`id_pago`, `nombre_cliente_pago`, `cobertura_pago`, `pago`, 
 (11, 32, NULL, NULL, NULL),
 (12, 33, NULL, NULL, NULL),
 (13, 34, NULL, NULL, NULL),
-(14, 35, NULL, NULL, NULL),
 (15, 36, NULL, NULL, NULL),
 (16, 39, NULL, NULL, NULL),
-(17, 40, NULL, NULL, NULL),
+(17, 53, '1970-01-02', '490.00', NULL),
 (18, 42, NULL, NULL, NULL),
 (19, 44, NULL, NULL, NULL),
 (20, 45, NULL, NULL, NULL),
@@ -186,7 +183,12 @@ INSERT INTO `pago` (`id_pago`, `nombre_cliente_pago`, `cobertura_pago`, `pago`, 
 (25, 50, NULL, NULL, NULL),
 (26, 51, NULL, NULL, NULL),
 (27, 52, NULL, NULL, NULL),
-(28, 53, NULL, NULL, NULL);
+(28, 53, NULL, NULL, NULL),
+(29, 53, '2021-04-01', '300.00', '2021-04-02'),
+(30, 52, '2021-05-08', '123.00', NULL),
+(31, 30, '2021-04-01', '1234.00', '2021-04-24'),
+(32, 30, '2021-04-01', '900.00', '2021-04-24'),
+(33, 20, '2021-04-02', '900.50', '2021-04-25');
 
 -- --------------------------------------------------------
 
@@ -202,6 +204,7 @@ CREATE TABLE `registro` (
   `nombre_registro` varchar(60) NOT NULL,
   `apellido_registro` varchar(60) NOT NULL,
   `sexo_registro` varchar(20) NOT NULL,
+  `url_imagen_registro` varchar(100) NOT NULL,
   `fecha_creacion_registro` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -209,24 +212,23 @@ CREATE TABLE `registro` (
 -- Volcado de datos para la tabla `registro`
 --
 
-INSERT INTO `registro` (`id_registro`, `email_registro`, `password_registro`, `gimnasio_registro`, `nombre_registro`, `apellido_registro`, `sexo_registro`, `fecha_creacion_registro`) VALUES
-(64, 'eliseo-01@gmail.com', '$2y$12$O5SgNF3wr.kk7rPUTy0ut.iVttGAexjwAh3wWi2rCjXUA7LFSpnkO', 'Tortuga', '', '', '', NULL),
-(65, 'eliseo-02@gmail.com', '$2y$12$D5O5gzydiyG50ecukJ5/uOsnDsIzjTgW2frdSi5PQGNmXtpC2SGp.', 'Gato', '', '', '', NULL),
-(66, 'eliseo-03@gmail.com', '$2y$12$Ukui5/HWpBFNkm0XcFqDtu.AhVn/XAA7oX1GuJTgSdcFaoMtEwH7e', 'Serpiente', '', '', '', NULL),
-(67, 'eliseo-05@gmail.com', '$2y$12$PXHeRoImIST2G/ZgFE890.Wn62uRC7oKPrDu1US290OYQOQW0Vg4y', 'Gorila', '', '', '', NULL),
-(68, 'eliseo-04@gmail.com', '$2y$12$BQ4O.sx49Bmx7Q8IxpmWhuvSRODjJ/Tm4p.FS5wkHdoe5aZnLxZhW', 'Tiburon', '', '', '', NULL),
-(69, 'eliseo-06@gmail.com', '$2y$12$laB.yj.2D3MoBsImVk9sHOsm6EnsiwPNLJqCRpKTLf6bTB9pGe9y2', 'Delfin', '', '', '', NULL),
-(70, 'eliseo-07@gmail.com', '$2y$12$9RmyBrBNoJEIihMBkSzuq.taXU01q2EkDn5i/K5/SwuAAQoL5z2yW', 'Pez', '', '', '', NULL),
-(71, 'eliseo-08@gmail.com', '$2y$12$n08M1A6ItbCYqh8PDSOfcuRkGKflLMDbTXRPUXlyF8RYExGcws6iu', 'Ballena', '', '', '', NULL),
-(72, 'eliseo-09@gmail.com', '$2y$12$nC1vnra3JAjYlP0bYtkmQegcMzNwrntC.dleE6SqrHq5EnGS8dG12', 'Raton', '', '', '', NULL),
-(73, 'eliseo-10@gmail.com', '$2y$12$1vVvzGXTHiQokg/Rs4OWjOqusJNyCnLtK3BtJkev.2SECMwKORGyS', 'Ardilla', '', '', '', NULL),
-(74, 'eliseo-23@gmail.com', '$2y$12$ZSWEaJ9NyWrUgD4FeiGc2OUrVBG0dwyTKn3iW9gCvSk.7e26iKtTi', 'Pajaro', '', '', '', NULL),
-(75, 'eliseo-25@gmail.com', '$2y$12$oh1lZpTQfJHENNeNNPdhh.p0jJ7WtGwhwT.XJuqAdy/rcJlJ37hc.', 'Gusano', '', '', '', NULL),
-(76, 'yuilucy08@gmail.com', '$2y$12$csWDXud3MbhEbGFApeS.FeAgRD6Tw/GABf1mGqKzLD6aM.T07yv.q', 'Perro', '', '', '', NULL),
-(77, 'yuilucy08@gmail.com', '$2y$12$2AKkq7AYWTh7gyn9zuSAVekWXy1rROMJoe4NzrPjeYpX7dMKeQxeu', 'Titan', '', '', '', NULL),
-(78, 'admin@admin.com', '$2y$12$ZRJPsQFiUkum7eKLU8gyFeSYDrrtsXfTPVNgdwdkca8N03L6fbZ4i', 'Gallo', '', '', '', NULL),
-(79, 'eliseo@eliseo.com', '$2y$12$huQcB8TC8qtrUiB0LTV8UuWljZLGnzHo7aXKBQ700jEa0XMyr/QQ6', 'Paloma', '', '', '', NULL),
-(80, 'eliseo99@hotmail.com', '$2y$12$6KSL.P8OmkMdRDspJmDi6.WPmXFFn8Rq0TnWqmdg248MhJWIZt55G', 'Tucanes', '', '', '', '2021-04-18');
+INSERT INTO `registro` (`id_registro`, `email_registro`, `password_registro`, `gimnasio_registro`, `nombre_registro`, `apellido_registro`, `sexo_registro`, `url_imagen_registro`, `fecha_creacion_registro`) VALUES
+(64, 'eliseo-01@gmail.com', '$2y$12$O5SgNF3wr.kk7rPUTy0ut.iVttGAexjwAh3wWi2rCjXUA7LFSpnkO', 'Tortuga', 'Tortuga', 'Tortuga', 'Hombre', '25f78835532a925e615a36652f3d1df8.jpg', NULL),
+(65, 'eliseo-02@gmail.com', '$2y$12$xYovpQa76nG/jf.nIvhzQ.y8SFEjrzV7LIPcxLRIvk102c99XUzMK', 'Gato', 'Eliseo', '02', 'Hombre', '174789971_2800696370195943_1911840129608064264_n.jpg', NULL),
+(66, 'eliseo-03@gmail.com', '$2y$12$Ukui5/HWpBFNkm0XcFqDtu.AhVn/XAA7oX1GuJTgSdcFaoMtEwH7e', 'Serpiente', '', '', '', '', NULL),
+(67, 'eliseo-05@gmail.com', '$2y$12$PXHeRoImIST2G/ZgFE890.Wn62uRC7oKPrDu1US290OYQOQW0Vg4y', 'Gorila', '', '', '', '', NULL),
+(68, 'eliseo-04@gmail.com', '$2y$12$BQ4O.sx49Bmx7Q8IxpmWhuvSRODjJ/Tm4p.FS5wkHdoe5aZnLxZhW', 'Tiburon', '', '', '', '', NULL),
+(69, 'eliseo-06@gmail.com', '$2y$12$laB.yj.2D3MoBsImVk9sHOsm6EnsiwPNLJqCRpKTLf6bTB9pGe9y2', 'Delfin', '', '', '', '', NULL),
+(70, 'eliseo-07@gmail.com', '$2y$12$9RmyBrBNoJEIihMBkSzuq.taXU01q2EkDn5i/K5/SwuAAQoL5z2yW', 'Pez', '', '', '', '', NULL),
+(71, 'eliseo-08@gmail.com', '$2y$12$n08M1A6ItbCYqh8PDSOfcuRkGKflLMDbTXRPUXlyF8RYExGcws6iu', 'Ballena', '', '', '', '', NULL),
+(72, 'eliseo-09@gmail.com', '$2y$12$nC1vnra3JAjYlP0bYtkmQegcMzNwrntC.dleE6SqrHq5EnGS8dG12', 'Raton', '', '', '', '', NULL),
+(73, 'eliseo-10@gmail.com', '$2y$12$1vVvzGXTHiQokg/Rs4OWjOqusJNyCnLtK3BtJkev.2SECMwKORGyS', 'Ardilla', '', '', '', '', NULL),
+(74, 'eliseo-23@gmail.com', '$2y$12$ZSWEaJ9NyWrUgD4FeiGc2OUrVBG0dwyTKn3iW9gCvSk.7e26iKtTi', 'Pajaro', '', '', '', '', NULL),
+(75, 'eliseo-25@gmail.com', '$2y$12$oh1lZpTQfJHENNeNNPdhh.p0jJ7WtGwhwT.XJuqAdy/rcJlJ37hc.', 'Gusano', '', '', '', '', NULL),
+(76, 'yuilucy08@gmail.com', '$2y$12$csWDXud3MbhEbGFApeS.FeAgRD6Tw/GABf1mGqKzLD6aM.T07yv.q', 'Perro', '', '', '', '', NULL),
+(78, 'admin@admin.com', '$2y$12$ZRJPsQFiUkum7eKLU8gyFeSYDrrtsXfTPVNgdwdkca8N03L6fbZ4i', 'Gallo', '', '', '', '', NULL),
+(79, 'eliseo@eliseo.com', '$2y$12$huQcB8TC8qtrUiB0LTV8UuWljZLGnzHo7aXKBQ700jEa0XMyr/QQ6', 'Paloma', '', '', '', '', NULL),
+(80, 'eliseo99@hotmail.com', '$2y$12$6KSL.P8OmkMdRDspJmDi6.WPmXFFn8Rq0TnWqmdg248MhJWIZt55G', 'Tucanes', '', '', '', '', '2021-04-18');
 
 --
 -- Índices para tablas volcadas
@@ -279,7 +281,7 @@ ALTER TABLE `entrada_salida`
 -- AUTO_INCREMENT de la tabla `pago`
 --
 ALTER TABLE `pago`
-  MODIFY `id_pago` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id_pago` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT de la tabla `registro`

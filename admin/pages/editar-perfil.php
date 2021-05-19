@@ -53,7 +53,7 @@ $id = $_SESSION['id'];
                       <!-- form start -->
                       <!-- Información que se manda al admin-ajax.php -->
                       <!-- enctype="multipart/form-data" es para cuando se manejan archivos -->
-                      <form name="" id="" method="POST" action="" data-aos="fade">
+                      <form name="guardar-registro-perfil" id="guardar-registro-perfil" method="POST" action="modelo-perfil.php" enctype="multipart/form-data" data-aos="fade">
                         <div class="card-body">
 
                           <div class="form-group row">
@@ -119,10 +119,10 @@ $id = $_SESSION['id'];
                     
                         <div class="card-footer">
                           <div class="row justify-content-end">
-                            <!-- Parametros que se mandan al if del modelo-cliente.php -->
+                            <!-- Parametros que se mandan al if del modelo-perfil.php -->
                             <input type="hidden" name="registro" value="editar">
-                            <input type="hidden" name="" value="">
-                            <input type="submit" class="btn btn-primary" id="" value="Editar Perfil">
+                            <input type="hidden" name="id_registro" value="<?php echo $registro['id_registro']; ?>">
+                            <input type="submit" class="btn btn-primary" id="" value="Guardar">
                           </div>
                         </div>
                       </form>
