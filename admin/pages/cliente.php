@@ -97,7 +97,7 @@ $id = $_SESSION['id'];
                 </div>
                 <div class="col-md-9">
                 <!-- class="seleccionar" es llamadao de app.js -->
-                <select id="" name="gimnasio" class="form-control seleccionar">
+                <select id="gimnasio" name="gimnasio" class="form-control seleccionar">
                 <option value="0">- Seleccione -</option>
                   <?php
                     try {
@@ -163,6 +163,7 @@ $id = $_SESSION['id'];
                 <th>Nombre</th>
                 <th>Email</th>
                 <th>Telefono</th>
+                <th>Estado</th>
                 <th>Acciones</th>
               </tr>
               </thead>
@@ -188,6 +189,13 @@ $id = $_SESSION['id'];
                       <td><?php echo $cliente['nombre_cliente'] . " " . $cliente['apellido_cliente']; ?></td>
                       <td><?php echo $cliente['email_cliente']; ?></td>
                       <td><?php echo $cliente['telefono_cliente']; ?></td>
+                      
+                      <td>
+                        <div class="onoffswitch">
+                          <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" tabindex="0">
+                          <label class="onoffswitch-label" for="myonoffswitch"></label>
+                        </div>
+                      </td>
 
                       <td>
                         <!-- <a title="Ver Todo" href="editar-cliente.php?id=<?php echo $cliente['id_cliente']; ?>" class="btn bg-gradient-primary btn-sm margin">
@@ -212,6 +220,7 @@ $id = $_SESSION['id'];
                 <th>Nombre</th>
                 <th>Email</th>
                 <th>Telefono</th>
+                <th>Estado</th>
                 <th>Acciones</th>
               </tr>
               </tfoot>

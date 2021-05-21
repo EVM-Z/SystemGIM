@@ -50,7 +50,7 @@ $(function(){
         }
     });
 
-    // Tabla de entrada-salida.php
+    // Tabla de pago.php
     $("#registros-pago").DataTable({
         // Ordena la tabla de mayor a menor. 1 = Numero de columna
         "order": [[ 0, "desc" ]],
