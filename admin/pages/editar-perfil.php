@@ -92,9 +92,35 @@ $id = $_SESSION['id'];
                           </div>
 
                           <div class="form-group row">
-                            <label for="sexo" class="col-sm-2 col-form-label">Sexo</label>
+                            <label for="nombre" class="col-sm-2 col-form-label">Categoría</label>
                             <div class="col-sm-10">
-                            <input type="text" class="form-control" id="sexo" name="sexo" value="<?php echo $registro['sexo_registro']; ?>">
+                            <select name="sexo" id="sexo" class="form-control seleccionar">
+                              <option value="">- Selecione -</option>
+                              <?php
+                                try {
+                                  $sexo_actual = $registro['sexo_registro'];
+                                    if ('hombre' == $sexo_actual) { ?>
+                                      <option value="hombre" selected>Hombre</option>
+                                      <option value="mujer">Mujer</option>
+                                      <option value="otro">Otro</option>
+
+                                    <?php } else if ('mujer' == $sexo_actual) { ?>
+                                      <option value="mujer" selected>Mujer</option>
+                                      <option value="hombre">Hombre</option>
+                                      <option value="otro">Otro</option>
+
+                                    <?php } else if ('otro' == $sexo_actual) { ?>
+                                      <option value="otro" selected>Otro</option>
+                                      <option value="hombre">Hombre</option>
+                                      <option value="mujer">Mujer</option>
+                                    <?php
+                                    }  
+                                } catch (Exception $e) {
+                                  echo "Error: " . $e->getMessage();
+                                }
+                              ?>
+                                
+                            </select>
                             </div>
                           </div>
 
