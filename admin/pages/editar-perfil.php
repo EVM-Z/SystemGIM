@@ -7,7 +7,7 @@ include 'templates/header.php';
 include 'templates/barra-superior.php';
 include 'templates/barra-lateral.php';
 
-// Obtenemos el id de la sesion
+// Obtenemos el id de la sesión
 $id = $_SESSION['id'];
 
 ?>
@@ -92,7 +92,7 @@ $id = $_SESSION['id'];
                           </div>
 
                           <div class="form-group row">
-                            <label for="nombre" class="col-sm-2 col-form-label">Categoría</label>
+                            <label for="nombre" class="col-sm-2 col-form-label">Sexo</label>
                             <div class="col-sm-10">
                             <select name="sexo" id="sexo" class="form-control seleccionar">
                               <option value="">- Selecione -</option>
