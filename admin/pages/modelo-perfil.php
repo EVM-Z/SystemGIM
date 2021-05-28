@@ -9,27 +9,14 @@ if ($_POST['registro'] == 'editar') {
     // Comprobación de existencia y declaración de variables
     $id_registro = $_POST['id_registro'];
     $email = $_POST['email'];
-
-
-    // if (isset($_POST['password'])) {
-    //     $password = $_POST['password'];
-    //     $opciones = array(
-    //         'cost' => 12
-    //     );
-    //     $password_hash = password_hash($password, PASSWORD_BCRYPT, $opciones);
-    // }
-
-
     $password = $_POST['password']; 
-
-
     $gimnasio = $_POST['gimnasio'];
     $nombre = $_POST['nombre'];
     $apellido = $_POST['apellido'];
     $sexo = $_POST['sexo'];
 
     
-    // Directorio donde se guardan las imagenes de los clientes
+    // Directorio donde se guardan las imagenes de los registros
     $directorio = "../dist/img/registros/";
     // is_dir verifica si el directorio existe
     if (!is_dir($directorio)) {
