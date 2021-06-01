@@ -91,10 +91,44 @@ $id = $_SESSION['id'];
                             </div>
                           </div>
 
-                          <div class="form-group row">
+                          <!-- <div class="form-group row">
                             <label for="sexo" class="col-sm-2 col-form-label">Sexo</label>
                             <div class="col-sm-10">
                             <input type="text" class="form-control" id="sexo" name="sexo" value="<?php echo $registro['sexo_registro']; ?>">
+                            </div>
+                          </div> -->
+
+                          <div class="form-group row">
+                            <label for="nombre" class="col-sm-2 col-form-label">Categoría</label>
+                            <div class="col-sm-10">
+                            <select name="sexo" id="sexo" class="form-control seleccionar">
+                              <option value="">- Selecione -</option>
+                              <?php
+                                try {
+                                  
+                                  $sexo_actual = $registro['sexo_registro'];
+                                  $sql = "SELECT sexo_registro FROM registro ";
+                                  $resultado = $conn->query($sql);
+                                  while($tabla_registro = $resultado->fetch_assoc()){
+
+                                    if ($tabla_registro['sexo_registro'] == $sexo_actual) { ?>
+                                      <option value="<?php echo $tabla_registro['sexo_registro']; ?>" selected>
+                                        <?php echo $tabla_registro['sexo_registro']; ?>
+                                      </option>
+
+                                    <?php } else { ?>
+                                      <option value="<?php echo $tabla_registro['sexo_registro']; ?>">
+                                        <?php echo $tabla_registro['sexo_registro']; ?>
+                                      </option>
+                                    <?php }
+                                    
+                                  }
+                                } catch (Exception $e) {
+                                  echo "Error: " . $e->getMessage();
+                                }
+                              ?>
+                                
+                            </select>
                             </div>
                           </div>
 
