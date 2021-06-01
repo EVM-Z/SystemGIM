@@ -11,6 +11,10 @@ include 'funciones/funciones.php';
 include 'templates/header.php';
 include 'templates/barra-superior.php';
 include 'templates/barra-lateral.php';
+
+// Obtenemos el id de la sesión
+$id_sesion = $_SESSION['id'];
+
 ?>
 
 
@@ -72,6 +76,38 @@ include 'templates/barra-lateral.php';
                           </div>
 
                           <div class="form-group row">
+                            <label for="nombre" class="col-sm-2 col-form-label">Sexo</label>
+                            <div class="col-sm-10">
+                            <select name="sexo" id="sexo" class="form-control seleccionar">
+                              <option value="">- Selecione -</option>
+                              <?php
+                                try {
+                                  $sexo_actual = $cliente['sexo_cliente'];
+                                    if ('hombre' == $sexo_actual) { ?>
+                                      <option value="hombre" selected>Hombre</option>
+                                      <option value="mujer">Mujer</option>
+                                      <option value="otro">Otro</option>
+
+                                    <?php } else if ('mujer' == $sexo_actual) { ?>
+                                      <option value="mujer" selected>Mujer</option>
+                                      <option value="hombre">Hombre</option>
+                                      <option value="otro">Otro</option>
+
+                                    <?php } else if ('otro' == $sexo_actual) { ?>
+                                      <option value="otro" selected>Otro</option>
+                                      <option value="hombre">Hombre</option>
+                                      <option value="mujer">Mujer</option>
+                                    <?php
+                                    }  
+                                } catch (Exception $e) {
+                                  echo "Error: " . $e->getMessage();
+                                }
+                              ?>
+                            </select>
+                            </div>
+                          </div>
+
+                          <div class="form-group row">
                             <label for="email" class="col-sm-2 col-form-label">Correo Electronico</label>
                             <div class="col-sm-10">
                             <input type="email" class="form-control" id="email" name="email" value="<?php echo $cliente['email_cliente']; ?>">
@@ -112,7 +148,7 @@ include 'templates/barra-lateral.php';
                               try {
                                 
                                 $gimnasio_actual = $cliente['gimnasio_cliente'];
-                                $sql = "SELECT * FROM registro ";
+                                $sql = "SELECT * FROM registro WHERE id_registro = $id_sesion ";
                                 $resultado = $conn->query($sql);
                                 while($tabla_registro = $resultado->fetch_assoc()){
 

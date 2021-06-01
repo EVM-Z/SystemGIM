@@ -65,6 +65,20 @@ $id = $_SESSION['id'];
 
               <div class="form-group row justify-content-center">
                 <div class="col-md-3">
+                  <h6 class="">Sexo*</h6>
+                </div>
+                <div class="col-md-9">
+                  <select name="sexo" id="sexo" class="form-control seleccionar">Sexo
+                    <option value="">- Seleccione -</option>
+                    <option value="hombre">Hombre</option>
+                    <option value="mujer">Mujer</option>
+                    <option value="otro">Otro</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group row justify-content-center">
+                <div class="col-md-3">
                   <h6 class="">Correo Electronico</h6>
                 </div>
                 <div class="col-md-9">
