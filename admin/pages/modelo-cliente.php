@@ -147,7 +147,7 @@ if ($_POST['registro']  == 'eliminar'){
     $id_borrar = $_POST['id'];
     
     try {
-        $stmt = $conn->prepare('DELETE FROM cliente WHERE id_cliente = ? ');
+        $stmt = $conn->prepare('UPDATE cliente SET estado_cliente = 0 WHERE id_cliente = ? ');
         $stmt->bind_param('i', $id_borrar);
         $stmt->execute();
         if ($stmt->affected_rows) {

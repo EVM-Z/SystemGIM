@@ -188,6 +188,7 @@ $id = $_SESSION['id'];
                     $sql .= " FROM cliente ";
                     $sql .= " INNER JOIN registro ";
                     $sql .= " ON cliente.gimnasio_cliente=registro.id_registro ";
+                    $sql .= " AND estado_cliente = 1 ";
                     $sql .= " WHERE gimnasio_cliente = $id ";
                     $sql .= " ORDER BY id_cliente DESC ";
                     $resultado = $conn->query($sql);
