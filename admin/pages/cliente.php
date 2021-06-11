@@ -65,11 +65,11 @@ $id = $_SESSION['id'];
 
               <div class="form-group row justify-content-center">
                 <div class="col-md-3">
-                  <h6 class="">Sexo*</h6>
+                  <h6 class="">Sexo</h6>
                 </div>
                 <div class="col-md-9">
-                  <select name="sexo" id="sexo" class="form-control seleccionar">Sexo
-                    <option value="">- Seleccione -</option>
+                  <select name="sexo" id="sexo" class="form-control seleccionar">
+                    <option value="" selected>- Seleccione -</option>
                     <option value="hombre">Hombre</option>
                     <option value="mujer">Mujer</option>
                     <option value="otro">Otro</option>
@@ -77,7 +77,7 @@ $id = $_SESSION['id'];
                 </div>
               </div>
 
-              <div class="form-group row justify-content-center">
+              <div class="form-group row justify-content-center"> 
                 <div class="col-md-3">
                   <h6 class="">Correo Electronico</h6>
                 </div>
@@ -177,7 +177,6 @@ $id = $_SESSION['id'];
                 <th>Nombre</th>
                 <th>Email</th>
                 <th>Telefono</th>
-                <th>Estado</th>
                 <th>Acciones</th>
               </tr>
               </thead>
@@ -203,23 +202,13 @@ $id = $_SESSION['id'];
                       <td><?php echo $cliente['nombre_cliente'] . " " . $cliente['apellido_cliente']; ?></td>
                       <td><?php echo $cliente['email_cliente']; ?></td>
                       <td><?php echo $cliente['telefono_cliente']; ?></td>
-                      
-                      <td>
-                        <div class="onoffswitch">
-                          <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" tabindex="0">
-                          <label class="onoffswitch-label" for="myonoffswitch"></label>
-                        </div>
-                      </td>
 
                       <td>
-                        <!-- <a title="Ver Todo" href="editar-cliente.php?id=<?php echo $cliente['id_cliente']; ?>" class="btn bg-gradient-primary btn-sm margin">
-                        <i class="fas fa-list-alt"></i>
-                        </a> -->
                         <a title="Editar" href="editar-cliente.php?id=<?php echo $cliente['id_cliente']; ?>" class="btn bg-gradient-warning btn-sm margin">
                         <i class="fas fa-pencil-alt"></i>
                         </a>
                         <!-- Se manda al admin-ajax.js -->
-                        <a title="Eliminar" href="#" data-id="<?php echo $cliente['id_cliente']; ?>" data-tipo="cliente" class="btn bg-gradient-danger btn-sm borrar_registro">
+                        <a title="Eliminar" href="#" data-id="<?php echo $cliente['id_cliente']; ?>" data-tipo="cliente" class="btn bg-gradient-danger btn-sm borrar-registro-cliente">
                         <i class="fas fa-trash-alt"></i>
                         </a>
                       </td>
@@ -234,7 +223,6 @@ $id = $_SESSION['id'];
                 <th>Nombre</th>
                 <th>Email</th>
                 <th>Telefono</th>
-                <th>Estado</th>
                 <th>Acciones</th>
               </tr>
               </tfoot>

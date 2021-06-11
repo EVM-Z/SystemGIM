@@ -325,6 +325,58 @@ $(document).ready(function() {
         })
     });
 
+    // Eliminar un cliente en cliente.php
+    $('.borrar-registro-cliente').on('click', function(e) {
+        // Evitamos que se habran los modelos.php desde el formulario
+        e.preventDefault();
+
+        // Creamos nuestros valores de los campos
+        var id = $(this).attr('data-id');
+        var tipo = $(this).attr('data-tipo');
+
+        Swal.fire({
+            title: '¿Estás Seguro?',
+            text: "Un registro eliminado no se puede recuperar",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Si, Eliminar',
+            cancelButtonText: 'Cancelar'
+        }).then((result) => {
+            if (result.value) {
+                // Llamado a AJAX
+                $.ajax({
+                    type: 'post',
+                    data: {
+                        // Datos que se estan mandando
+                        'id': id,
+                        'registro': 'eliminar'
+                    },
+                    url: 'modelo-' + tipo + '.php',
+                    success: function(data) {
+                        console.log(data);
+                        var resultado = JSON.parse(data);
+                        if (resultado.respuesta == 'exito') {
+                            Swal.fire(
+                                'Eliminado',
+                                'El registro ha sido eliminado',
+                                'success'
+                            )
+                            jQuery('[data-id="' + resultado.id_eliminado + '"]').parents('tr').remove();
+                        } else {
+                            Swal(
+                                'Error',
+                                'No se pudo eliminar',
+                                'error'
+                            )
+                        }
+                    }
+                })
+            }
+        })
+    });
+
     // Se ejecuta en el login.php
     $('#login').on('submit', function(e) {
         // Evitamos que se habran los modelos.php desde el formulario

@@ -40,6 +40,7 @@ if ($_POST['registro']  == 'nuevo') {
 
     try {  
         // php statement
+        // El id_cliente lo toma del $stmt
         $stmt = $conn->prepare("INSERT INTO cliente (nombre_cliente, apellido_cliente, sexo_cliente, email_cliente, fecha_nacimiento_cliente, telefono_cliente, gimnasio_cliente, url_imagen_cliente, fecha_creacion_cliente) VALUES (?, ?, ?, ?, ?, ?, ?, ?, CURDATE()) ");
         $stmt->bind_param("ssssssis", $nombre, $apellido, $sexo, $email, $fecha_formateada, $telefono, $gimnasio, $imagen_url);
         $stmt->execute();
@@ -74,7 +75,6 @@ if ($_POST['registro']  == 'editar') {
     $id_cliente = $_POST['id_cliente'];
     $nombre = $_POST['nombre'];
     $apellido = $_POST['apellido'];
-    $sexo = $_POST['sexo'];
     $email = $_POST['email'];
     $fecha = $_POST['fecha'];
     // Reemplaza los caracteres
@@ -107,12 +107,12 @@ if ($_POST['registro']  == 'editar') {
     try {
         if ($_FILES['archivo_imagen']['size'] > 0) {
             // Cuando cambian la imagen
-            $stmt = $conn->prepare('UPDATE cliente SET nombre_cliente = ?, apellido_cliente = ?, sexo_cliente = ?, email_cliente = ?, fecha_nacimiento_cliente = ?, telefono_cliente = ?, gimnasio_cliente = ?, url_imagen_cliente = ? WHERE id_cliente = ? ');
-            $stmt->bind_param("ssssssisi", $nombre, $apellido, $sexo, $email, $fecha_formateada, $telefono, $gimnasio, $imagen_url, $id_cliente);
+            $stmt = $conn->prepare('UPDATE cliente SET nombre_cliente = ?, apellido_cliente = ?, email_cliente = ?, fecha_nacimiento_cliente = ?, telefono_cliente = ?, gimnasio_cliente = ?, url_imagen_cliente = ? WHERE id_cliente = ? ');
+            $stmt->bind_param("sssssisi", $nombre, $apellido, $email, $fecha_formateada, $telefono, $gimnasio, $imagen_url, $id_cliente);
         } else {
             // Cuando no cambian la imagen
-            $stmt = $conn->prepare('UPDATE cliente SET nombre_cliente = ?, apellido_cliente = ?, sexo_cliente = ?, email_cliente = ?, fecha_nacimiento_cliente = ?, telefono_cliente = ?, gimnasio_cliente = ? WHERE id_cliente = ? ');
-            $stmt->bind_param("sssssii", $nombre, $apellido, $sexo, $email, $fecha_formateada, $telefono, $gimnasio, $id_cliente);
+            $stmt = $conn->prepare('UPDATE cliente SET nombre_cliente = ?, apellido_cliente = ?, email_cliente = ?, fecha_nacimiento_cliente = ?, telefono_cliente = ?, gimnasio_cliente = ? WHERE id_cliente = ? ');
+            $stmt->bind_param("sssssii", $nombre, $apellido, $email, $fecha_formateada, $telefono, $gimnasio, $id_cliente);
         }
 
         $estado = $stmt->execute();

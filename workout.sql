@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 19-05-2021 a las 04:44:23
+-- Tiempo de generación: 11-06-2021 a las 18:01:22
 -- Versión del servidor: 10.4.17-MariaDB
--- Versión de PHP: 8.0.0
+-- Versión de PHP: 8.0.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -31,9 +31,11 @@ CREATE TABLE `cliente` (
   `id_cliente` int(11) NOT NULL,
   `nombre_cliente` varchar(60) NOT NULL,
   `apellido_cliente` varchar(60) NOT NULL,
+  `sexo_cliente` varchar(10) NOT NULL,
   `email_cliente` varchar(60) NOT NULL,
   `fecha_nacimiento_cliente` date NOT NULL,
   `telefono_cliente` varchar(15) NOT NULL,
+  `estado_cliente` tinyint(4) NOT NULL DEFAULT 1,
   `gimnasio_cliente` int(11) NOT NULL,
   `url_imagen_cliente` varchar(100) NOT NULL,
   `fecha_creacion_cliente` date DEFAULT NULL
@@ -43,35 +45,43 @@ CREATE TABLE `cliente` (
 -- Volcado de datos para la tabla `cliente`
 --
 
-INSERT INTO `cliente` (`id_cliente`, `nombre_cliente`, `apellido_cliente`, `email_cliente`, `fecha_nacimiento_cliente`, `telefono_cliente`, `gimnasio_cliente`, `url_imagen_cliente`, `fecha_creacion_cliente`) VALUES
-(20, 'Eliseo', 'VM', 'eliseo-01@gmail.com', '2021-12-31', '9981505702', 65, '127162643_10159108904568217_5842463868241141841_n.jpg', NULL),
-(21, 'Juana', 'VM', 'eliseo-01@gmail.com', '2020-11-14', '9981505702', 64, '122678745_2762713470669451_2203428614279550983_o.jpg', NULL),
-(22, 'Pepe', 'VM', 'eliseo-01@gmail.com', '2020-11-10', '9981505702', 72, 'Sin título111.png', NULL),
-(23, 'Alex', 'VM', 'eliseo-01@gmail.com', '2020-11-03', '9981505702', 66, 'Sin título111.png', NULL),
-(26, 'Carlos', 'VM', 'eliseo-01@gmail.com', '2020-11-10', '9981505702', 66, '122678745_2762713470669451_2203428614279550983_o.jpg', NULL),
-(27, 'Itzel', 'VM', 'eliseo-01@gmail.com', '2020-11-14', '9981505702', 66, 'Sin título111.png', NULL),
-(28, 'Lucia', 'VM', 'eliseo-01@gmail.com', '1994-07-19', '9981505702', 68, '123140339_1519457401589137_5102889472902390156_n.jpg', NULL),
-(29, 'Omar', 'VM', 'eliseo-01@gmail.com', '2020-11-03', '9981505702', 67, '20190609_112611.jpg', NULL),
-(30, 'Astrid', 'VM', 'eliseo-01@gmail.com', '1994-07-19', '9981505702', 72, '122708132_1000704930432221_3500663975623121294_o.jpg', NULL),
-(31, 'Fanny', 'VM', 'ultima@ultima.com', '2020-11-02', '9981505702', 66, '123049280_184397109906000_7453044576460053003_o.jpg', NULL),
-(32, 'Federico', 'VM', 'juan@juan.com', '2020-11-02', '9981-5057-02', 66, '118988454_322259409191532_9047549356402945931_o.jpg', NULL),
-(33, 'Ariel', 'VM', 'eliseo-01@gmail.com', '2020-11-03', '9981505702', 67, '108031076_10208153574434112_6700955287415195789_o.jpg', NULL),
-(34, 'Lucia', 'Alamilla', 'eliseo-01@gmail.com', '2020-11-02', '9981-5057-02', 73, '108031076_10208153574434112_6700955287415195789_o.jpg', NULL),
-(35, 'Beatriz', 'Juarez', 'eliseo-01@gmail.com', '2020-11-18', '9981-5057-02', 64, '113242783_10208175112172542_1332820974758870271_o.jpg', NULL),
-(36, 'Ana', 'Dell', 'eliseo-01@gmail.com', '1994-07-19', '9981505702', 71, '127162643_10159108904568217_5842463868241141841_n.jpg', NULL),
-(39, 'Logi Logi', 'Logi', 'logi@logi.com', '2021-01-20', '9981505050', 76, 'aprender-ingles.jpg', NULL),
-(40, 'Fede', 'Perez', 'logi@logi.com', '2021-01-27', '9981505050', 64, 'unnamed.jpg', NULL),
-(42, 'Microsoft', 'Corporation', 'eliseo-01@gmail.com', '2021-02-24', '9981505050', 76, 'platzi.jpg', NULL),
-(44, 'Alma', 'China', 'logi@logi.com', '2021-01-20', '9981505050', 76, 'eb7710e28b66bc1bfa26e60c0426cf0e.jpg', NULL),
-(45, 'Propiedad', 'propiedad', 'logi@logi.com', '2021-01-20', '9981505050', 65, 'unnamed.jpg', NULL),
-(46, 'Guadalupe', 'Tijuana', 'eliseo-01@gmail.com', '2021-01-20', '9981505050', 65, 'brackets-linguales-preguntas-frecuentes.jpg', NULL),
-(47, 'Luz', 'Nieto', 'eliseo-01@gmail.com', '2021-01-20', '9981505050', 65, 'maxresdefault.jpg', NULL),
-(48, 'Nvidia', 'Nvidia', 'nvidia@nvidia.com', '2021-02-24', '9981505050', 64, 'platzi.jpg', NULL),
-(49, 'Luis', 'Paca', '', '2021-03-24', '', 64, 'pantalla-muy-larga-gaming-1024x576.jpg', NULL),
-(50, 'Pepe', 'Juarez', 'juarez@alave.com.mx', '2020-09-09', '9981505702', 76, '', NULL),
-(51, 'Pepita', 'Nana', '', '2020-05-20', '9981505702', 79, '', NULL),
-(52, 'Pepe', 'Mujica', 'paragua@paraguay.com', '2021-04-24', '9981505702', 64, '1366_200350.jpg', NULL),
-(53, 'Clark', 'Kent', 'superman@superman.com', '2021-04-12', '9981505702', 64, 'aprender-ingles.jpg', '2021-04-18');
+INSERT INTO `cliente` (`id_cliente`, `nombre_cliente`, `apellido_cliente`, `sexo_cliente`, `email_cliente`, `fecha_nacimiento_cliente`, `telefono_cliente`, `estado_cliente`, `gimnasio_cliente`, `url_imagen_cliente`, `fecha_creacion_cliente`) VALUES
+(20, 'Eliseo', 'VM', '', 'eliseo-01@gmail.com', '2021-12-31', '9981505702', 1, 65, '127162643_10159108904568217_5842463868241141841_n.jpg', NULL),
+(21, 'Juana', 'VM', '', 'eliseo-01@gmail.com', '2020-11-14', '9981505702', 1, 64, '122678745_2762713470669451_2203428614279550983_o.jpg', NULL),
+(22, 'Pepe', 'VM', '', 'eliseo-01@gmail.com', '2020-11-10', '9981505702', 1, 72, 'Sin título111.png', NULL),
+(23, 'Alex', 'VM', '', 'eliseo-01@gmail.com', '2020-11-03', '9981505702', 1, 66, 'Sin título111.png', NULL),
+(26, 'Carlos', 'VM', '', 'eliseo-01@gmail.com', '2020-11-10', '9981505702', 1, 66, '122678745_2762713470669451_2203428614279550983_o.jpg', NULL),
+(27, 'Itzel', 'VM', '', 'eliseo-01@gmail.com', '2020-11-14', '9981505702', 1, 66, 'Sin título111.png', NULL),
+(28, 'Lucia', 'VM', '', 'eliseo-01@gmail.com', '1994-07-19', '9981505702', 1, 68, '123140339_1519457401589137_5102889472902390156_n.jpg', NULL),
+(29, 'Omar', 'VM', '', 'eliseo-01@gmail.com', '2020-11-03', '9981505702', 0, 67, '20190609_112611.jpg', NULL),
+(30, 'Astrid', 'VM', '', 'eliseo-01@gmail.com', '1994-07-19', '9981505702', 0, 72, '122708132_1000704930432221_3500663975623121294_o.jpg', NULL),
+(31, 'Fanny', 'VM', '', 'ultima@ultima.com', '2020-11-02', '9981505702', 0, 66, '123049280_184397109906000_7453044576460053003_o.jpg', NULL),
+(32, 'Federico', 'VM', '', 'juan@juan.com', '2020-11-02', '9981-5057-02', 0, 66, '118988454_322259409191532_9047549356402945931_o.jpg', NULL),
+(33, 'Ariel', 'VM', '', 'eliseo-01@gmail.com', '2020-11-03', '9981505702', 0, 67, '108031076_10208153574434112_6700955287415195789_o.jpg', NULL),
+(34, 'Lucia', 'Alamilla', '', 'eliseo-01@gmail.com', '2020-11-02', '9981-5057-02', 0, 73, '108031076_10208153574434112_6700955287415195789_o.jpg', NULL),
+(35, 'Beatriz', 'Juarez', '', 'eliseo-01@gmail.com', '2020-11-18', '9981-5057-02', 0, 64, '113242783_10208175112172542_1332820974758870271_o.jpg', NULL),
+(36, 'Ana', 'Dell', '', 'eliseo-01@gmail.com', '1994-07-19', '9981505702', 0, 71, '127162643_10159108904568217_5842463868241141841_n.jpg', NULL),
+(39, 'Logi Logi', 'Logi', '', 'logi@logi.com', '2021-01-20', '9981505050', 0, 76, 'aprender-ingles.jpg', NULL),
+(40, 'Fede', 'Perez', '', 'logi@logi.com', '2021-01-27', '9981505050', 0, 64, 'unnamed.jpg', NULL),
+(42, 'Microsoft', 'Corporation', '', 'eliseo-01@gmail.com', '2021-02-24', '9981505050', 0, 76, 'platzi.jpg', NULL),
+(44, 'Alma', 'China', '', 'logi@logi.com', '2021-01-20', '9981505050', 0, 76, 'eb7710e28b66bc1bfa26e60c0426cf0e.jpg', NULL),
+(45, 'Propiedad', 'propiedad', '', 'logi@logi.com', '2021-01-20', '9981505050', 0, 65, 'unnamed.jpg', NULL),
+(46, 'Guadalupe', 'Tijuana', '', 'eliseo-01@gmail.com', '2021-01-20', '9981505050', 0, 65, 'brackets-linguales-preguntas-frecuentes.jpg', NULL),
+(47, 'Luz', 'Nieto', '', 'eliseo-01@gmail.com', '2021-01-20', '9981505050', 0, 65, 'maxresdefault.jpg', NULL),
+(48, 'Nvidia', 'Nvidia', '', 'nvidia@nvidia.com', '2021-02-24', '9981505050', 0, 64, 'platzi.jpg', NULL),
+(49, 'Luis', 'Paca', '', '', '2021-03-24', '', 0, 64, 'pantalla-muy-larga-gaming-1024x576.jpg', NULL),
+(50, 'Pepe', 'Juarez', '', 'juarez@alave.com.mx', '2020-09-09', '9981505702', 0, 76, '', NULL),
+(51, 'Pepita', 'Nana', '', '', '2020-05-20', '9981505702', 0, 79, '', NULL),
+(52, 'Pepe', 'Mujica', '', 'paragua@paraguay.com', '2021-04-24', '9981505702', 0, 64, '1366_200350.jpg', NULL),
+(53, 'Clark', 'Kent', '', 'superman@superman.com', '2021-04-12', '9981505702', 0, 64, 'aprender-ingles.jpg', '2021-04-18'),
+(54, 'Venom', 'Simbionte', 'otro', 'simbionte@simbionte.com', '2021-06-10', '9981', 1, 64, '123049280_184397109906000_7453044576460053003_o.jpg', '2021-06-10'),
+(55, 'Peter', 'Parker', '', 'spiderman@spiderman.com', '2021-06-09', '9981', 1, 64, 'Captura de pantalla 2021-06-10 090108.png', '2021-06-10'),
+(56, 'Benito', 'Juarez', '', 'benito@benito.com', '2021-06-20', '9981', 1, 64, 'Captura de pantalla 2021-06-10 090108.png', '2021-06-10'),
+(57, 'Prueba', 'Prueba', '', 'prueba@prueba.com', '2021-06-25', '9981', 1, 64, '56848056_1210196885824870_5863649069448036352_n.jpg', '2021-06-11'),
+(58, 'Prueba2', 'Prueba2', '', 'prueba2@prueba2.com.mx', '2021-06-25', '9981', 1, 64, '56848056_1210196885824870_5863649069448036352_n.jpg', '2021-06-11'),
+(59, 'Prueba3', 'Prueba3', '', 'prueba3@prueba3.com.mx', '2021-06-17', '9981', 1, 64, '193064032_336448634560516_2941969823588855552_n.jpg', '2021-06-11'),
+(60, 'Prueba4', 'Prueba4', 'hombre', 'prueba4@prueba4.com.mx', '2021-06-17', '9981', 1, 64, 'Unidad de imagen T3.jpeg', '2021-06-11'),
+(61, 'Loki', 'Loki', 'otro', 'loki@loki.com.mx', '2021-06-25', '9981', 1, 64, 'Mensaje en la impresora.jpeg', '2021-06-11');
 
 --
 -- Disparadores `cliente`
@@ -138,7 +148,9 @@ INSERT INTO `entrada_salida` (`id_entrada_salida`, `cliente_entrada_salida`, `fe
 (82, 21, '2021-03-09', '21:34:34'),
 (83, 35, '2021-03-09', '22:00:08'),
 (84, 21, '2021-03-14', '21:23:11'),
-(85, 20, '2021-04-18', '12:57:35');
+(85, 20, '2021-04-18', '12:57:35'),
+(86, 53, '2021-06-09', '11:44:00'),
+(87, 53, '2021-06-09', '11:45:49');
 
 -- --------------------------------------------------------
 
@@ -185,10 +197,18 @@ INSERT INTO `pago` (`id_pago`, `nombre_cliente_pago`, `cobertura_pago`, `pago`, 
 (27, 52, NULL, NULL, NULL),
 (28, 53, NULL, NULL, NULL),
 (29, 53, '2021-04-01', '300.00', '2021-04-02'),
-(30, 52, '2021-05-08', '123.00', NULL),
 (31, 30, '2021-04-01', '1234.00', '2021-04-24'),
 (32, 30, '2021-04-01', '900.00', '2021-04-24'),
-(33, 20, '2021-04-02', '900.50', '2021-04-25');
+(33, 20, '2021-04-02', '900.50', '2021-04-25'),
+(34, 54, NULL, NULL, NULL),
+(35, 55, NULL, NULL, NULL),
+(36, 56, NULL, NULL, NULL),
+(37, 56, '2021-06-15', '300.00', '2021-06-11'),
+(38, 57, NULL, NULL, NULL),
+(39, 58, NULL, NULL, NULL),
+(40, 59, NULL, NULL, NULL),
+(41, 60, NULL, NULL, NULL),
+(42, 61, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -213,7 +233,7 @@ CREATE TABLE `registro` (
 --
 
 INSERT INTO `registro` (`id_registro`, `email_registro`, `password_registro`, `gimnasio_registro`, `nombre_registro`, `apellido_registro`, `sexo_registro`, `url_imagen_registro`, `fecha_creacion_registro`) VALUES
-(64, 'eliseo-01@gmail.com', '$2y$12$O5SgNF3wr.kk7rPUTy0ut.iVttGAexjwAh3wWi2rCjXUA7LFSpnkO', 'Tortuga', 'Tortuga', 'Tortuga', 'Hombre', '25f78835532a925e615a36652f3d1df8.jpg', NULL),
+(64, 'eliseo-01@gmail.com', '$2y$12$O5SgNF3wr.kk7rPUTy0ut.iVttGAexjwAh3wWi2rCjXUA7LFSpnkO', 'Tortugas Ninja', 'Tortuga Ninja', 'Tortuga Ninja', 'mujer', '197630782_816565435731465_1381463867078408634_n.jpg', NULL),
 (65, 'eliseo-02@gmail.com', '$2y$12$xYovpQa76nG/jf.nIvhzQ.y8SFEjrzV7LIPcxLRIvk102c99XUzMK', 'Gato', 'Eliseo', '02', 'Hombre', '174789971_2800696370195943_1911840129608064264_n.jpg', NULL),
 (66, 'eliseo-03@gmail.com', '$2y$12$Ukui5/HWpBFNkm0XcFqDtu.AhVn/XAA7oX1GuJTgSdcFaoMtEwH7e', 'Serpiente', '', '', '', '', NULL),
 (67, 'eliseo-05@gmail.com', '$2y$12$PXHeRoImIST2G/ZgFE890.Wn62uRC7oKPrDu1US290OYQOQW0Vg4y', 'Gorila', '', '', '', '', NULL),
@@ -269,19 +289,19 @@ ALTER TABLE `registro`
 -- AUTO_INCREMENT de la tabla `cliente`
 --
 ALTER TABLE `cliente`
-  MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
+  MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
 
 --
 -- AUTO_INCREMENT de la tabla `entrada_salida`
 --
 ALTER TABLE `entrada_salida`
-  MODIFY `id_entrada_salida` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=86;
+  MODIFY `id_entrada_salida` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=88;
 
 --
 -- AUTO_INCREMENT de la tabla `pago`
 --
 ALTER TABLE `pago`
-  MODIFY `id_pago` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id_pago` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- AUTO_INCREMENT de la tabla `registro`
