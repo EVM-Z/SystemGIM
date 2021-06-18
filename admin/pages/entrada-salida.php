@@ -71,7 +71,7 @@ $id = $_SESSION['id'];
                   $sql = "SELECT ";
                   $sql .= " es.id_entrada_salida AS 'id_entrada_salida', ";
                   $sql .= " es.fecha_entrada_salida AS 'f_entrada_salida', ";
-                  $sql .= " es.e_s AS 'h_entrada_salida', ";
+                  $sql .= " es.hora_entrada_salida AS 'h_entrada_salida', ";
 
                   $sql .= " c.id_cliente AS 'id_cliente', ";
                   $sql .= " c.nombre_cliente AS 'nombre_cliente', ";

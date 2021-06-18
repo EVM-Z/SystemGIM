@@ -9,7 +9,7 @@ if ($_POST['registro'] == 'entrada') {
 
     try {
         // php statement
-        $stmt = $conn->prepare("INSERT INTO entrada_salida (cliente_entrada_salida, fecha_entrada_salida, e_s) VALUES (?, CURDATE(), curTime()) ");
+        $stmt = $conn->prepare("INSERT INTO entrada_salida (cliente_entrada_salida, fecha_entrada_salida, hora_entrada_salida) VALUES (?, CURDATE(), curTime()) ");
         $stmt->bind_param("i", $id_entrada_salida);
         $stmt->execute();
         // insert_id es un valor de $stmt
