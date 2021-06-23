@@ -91,7 +91,8 @@ $id = $_SESSION['id'];
                   $sql .= " ON c.id_cliente = p.nombre_cliente_pago ";
 
                   $sql .= " WHERE c.gimnasio_cliente = $id ";
-                  $sql .= " ORDER BY es.id_entrada_salida DESC ";
+                  $sql .= " ORDER BY es.id_entrada_salida DESC, ";
+                  $sql .= " p.cobertura_pago DESC ";
 
                   $resultado = $conn->query($sql);
                 } catch (Exception $e) {
