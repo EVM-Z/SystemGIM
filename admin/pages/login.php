@@ -56,7 +56,7 @@ include 'templates/header-workout.php';
                             <a href="registro.php">Crea una cuenta</a>
                         </div>
                         <div class="row justify-content-center">
-                            <a href="recuperar-password.php">Recuperar Contraseña</a>
+                            <a href="forgot-password.php">Recuperar Contraseña</a>
                         </div>
                     </div>
 
