@@ -47,5 +47,10 @@
 <!-- Tempusdominus Bootstrap 4 -->
 <script src="../plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
 
+<!-- Para las graficas -->
+<script src="../plugins/chart.js/Chart.min.js"></script>
+<!-- <script src="../dist/js/demo.js"></script> -->
+<script src="../dist/js/dashboard3.js"></script>
+
 </body>
 </html>
